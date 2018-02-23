@@ -1859,9 +1859,18 @@
 <ul class="simple">
 <li><a class="reference internal" href="#eos-platform-options" id="id2">EOS Platform Options</a><ul>
 <li><a class="reference internal" href="#connections-available" id="id3">Connections Available</a></li>
-<li><a class="reference internal" href="#using-cli-in-ansible-2-5" id="id4">Using CLI in Ansible 2.5</a></li>
-<li><a class="reference internal" href="#using-eapi-in-ansible-2-5" id="id5">Using eAPI in Ansible 2.5</a></li>
-<li><a class="reference internal" href="#notes-for-ansible-2-5" id="id6">Notes for Ansible &lt; 2.5</a></li>
+<li><a class="reference internal" href="#using-cli-in-ansible-2-5" id="id4">Using CLI in Ansible 2.5</a><ul>
+<li><a class="reference internal" href="#example-cli-group-vars-eos-yml" id="id5">Example CLI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a></li>
+<li><a class="reference internal" href="#example-cli-task" id="id6">Example CLI Task</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#using-eapi-in-ansible-2-5" id="id7">Using eAPI in Ansible 2.5</a><ul>
+<li><a class="reference internal" href="#enabling-eapi" id="id8">Enabling eAPI</a></li>
+<li><a class="reference internal" href="#example-eapi-group-vars-eos-yml" id="id9">Example eAPI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a></li>
+<li><a class="reference internal" href="#example-eapi-task" id="id10">Example eAPI Task</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#notes-for-ansible-2-5" id="id11">Notes for Ansible &lt; 2.5</a></li>
 </ul>
 </li>
 </ul>
@@ -1910,7 +1919,8 @@
 </div>
 <div class="section" id="using-cli-in-ansible-2-5">
 <h2><a class="toc-backref" href="#id4">Using CLI in Ansible 2.5</a><a class="headerlink" href="#using-cli-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
-<p>Example CLI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></p>
+<div class="section" id="example-cli-group-vars-eos-yml">
+<h3><a class="toc-backref" href="#id5">Example CLI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a><a class="headerlink" href="#example-cli-group-vars-eos-yml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">network_cli</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">eos</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
@@ -1921,7 +1931,9 @@
 </pre></div>
 </div>
 <p>If you are using SSH keys (including an ssh-agent) you can remove the ansible_ssh_pass line.</p>
-<p>Example CLI Task</p>
+</div>
+<div class="section" id="example-cli-task">
+<h3><a class="toc-backref" href="#id6">Example CLI Task</a><a class="headerlink" href="#example-cli-task" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup switch (eos)</span>
   <span class="l l-Scalar l-Scalar-Plain">eos_config</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -1930,9 +1942,26 @@
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="using-eapi-in-ansible-2-5">
-<h2><a class="toc-backref" href="#id5">Using eAPI in Ansible 2.5</a><a class="headerlink" href="#using-eapi-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
-<p>Example eAPI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></p>
+<h2><a class="toc-backref" href="#id7">Using eAPI in Ansible 2.5</a><a class="headerlink" href="#using-eapi-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enabling-eapi">
+<h3><a class="toc-backref" href="#id8">Enabling eAPI</a><a class="headerlink" href="#enabling-eapi" title="Permalink to this headline">¶</a></h3>
+<p>Before you can use eAPI to connect to a switch, you must enable eAPI. To enable eAPI on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">eos_eapi</span></code> module via the CLI connection. Set up group_vars/eos.yml just like in the CLI example above, then run a playbook task like this:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable eAPI</span>
+   <span class="l l-Scalar l-Scalar-Plain">eos_eapi</span><span class="p p-Indicator">:</span>
+       <span class="l l-Scalar l-Scalar-Plain">enable_http</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+       <span class="l l-Scalar l-Scalar-Plain">enable_https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+  <span class=" -Error"> </span><span class="l l-Scalar l-Scalar-Plain">become</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+   <span class="l l-Scalar l-Scalar-Plain">become_method</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">enable</span>
+   <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;eos&#39;</span>
+</pre></div>
+</div>
+<p>To find out more about the options for enabling HTTP/HTTPS and local http see the <a class="reference internal" href="../../module_docs/eos_eapi_module.html#eos-eapi"><span class="std std-ref">eos_eapi</span></a> module documentation.</p>
+<p>Once eAPI is enabled, change your <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code> to use the eAPI connection.</p>
+</div>
+<div class="section" id="example-eapi-group-vars-eos-yml">
+<h3><a class="toc-backref" href="#id9">Example eAPI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a><a class="headerlink" href="#example-eapi-group-vars-eos-yml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">eos</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
@@ -1943,7 +1972,9 @@
 </pre></div>
 </div>
 <p><strong>QUESTION:</strong> How do I set a web proxy for indirect access via an eAPI connection?</p>
-<p>Example eAPI Task</p>
+</div>
+<div class="section" id="example-eapi-task">
+<h3><a class="toc-backref" href="#id10">Example eAPI Task</a><a class="headerlink" href="#example-eapi-task" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup switch (eos)</span>
   <span class="l l-Scalar l-Scalar-Plain">eos_config</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -1958,8 +1989,9 @@
 <p class="last">Never store passwords in plain text. We recommend using <span class="xref std std-ref">Ansible Vault</span> to encrypt all sensitive variables.</p>
 </div>
 </div>
+</div>
 <div class="section" id="notes-for-ansible-2-5">
-<h2><a class="toc-backref" href="#id6">Notes for Ansible &lt; 2.5</a><a class="headerlink" href="#notes-for-ansible-2-5" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id11">Notes for Ansible &lt; 2.5</a><a class="headerlink" href="#notes-for-ansible-2-5" title="Permalink to this headline">¶</a></h2>
 <p>Do we need any content here?</p>
 </div>
 </div>

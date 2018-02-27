@@ -19,7 +19,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>EOS Platform Options &mdash; Ansible Documentation</title>
+  <title>Platform Options &mdash; Ansible Documentation</title>
   
 
   
@@ -1840,10 +1840,10 @@
 
           <ul class="wy-breadcrumbs">
   <li><a href="../../index.html">Docs</a> &raquo;</li>
-  <li><a href="">EOS Platform Options</a></li>
+  <li><a href="">Platform Options</a></li>
   
     <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/network/user_guide/platform_eos.rst" class="icon icon-github"> Edit on GitHub</a>
+      <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/network/user_guide/platform_index.rst" class="icon icon-github"> Edit on GitHub</a>
     </li>
   
 </ul>
@@ -1851,196 +1851,36 @@
 
           <div id="page-content">
           
-  <div class="section" id="eos-platform-options">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2">EOS Platform Options</a><a class="headerlink" href="#eos-platform-options" title="Permalink to this headline">¶</a></h1>
-<p>Arista EOS supports multiple connections. This page offers details on how each connection works in Ansible 2.5 and how to use it.</p>
-<div class="contents topic" id="topics">
-<p class="topic-title first">Topics</p>
-<ul class="simple">
-<li><a class="reference internal" href="#eos-platform-options" id="id2">EOS Platform Options</a><ul>
-<li><a class="reference internal" href="#connections-available" id="id3">Connections Available</a></li>
-<li><a class="reference internal" href="#using-cli-in-ansible-2-5" id="id4">Using CLI in Ansible 2.5</a><ul>
-<li><a class="reference internal" href="#example-cli-group-vars-eos-yml" id="id5">Example CLI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a></li>
-<li><a class="reference internal" href="#example-cli-task" id="id6">Example CLI Task</a></li>
+  <div class="section" id="platform-options">
+<span id="id1"></span><h1>Platform Options<a class="headerlink" href="#platform-options" title="Permalink to this headline">¶</a></h1>
+<p>Some Ansible Network platforms support multiple connection types, privilege escalation, or other options. The pages in this section offer standardized guides to understanding available options on each network platform. We welcome contributions from community-maintained platforms to this section.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Platform Options</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="platform_eos.html">EOS Platform Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform_eos.html#connections-available">Connections Available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_eos.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_eos.html#using-eapi-in-ansible-2-5">Using eAPI in Ansible 2.5</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-eapi-in-ansible-2-5" id="id7">Using eAPI in Ansible 2.5</a><ul>
-<li><a class="reference internal" href="#enabling-eapi" id="id8">Enabling eAPI</a></li>
-<li><a class="reference internal" href="#example-eapi-group-vars-eos-yml" id="id9">Example eAPI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a></li>
-<li><a class="reference internal" href="#example-eapi-task" id="id10">Example eAPI Task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="platform_ios.html">IOS Platform Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform_ios.html#connections-available">Connections Available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_ios.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platform_junos.html">JUNOS Platform Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform_junos.html#connections-available">Connections Available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_junos.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_junos.html#using-netconf-in-ansible-2-5">Using Netconf in Ansible 2.5</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="platform_nxos.html">NXOS Platform Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="platform_nxos.html#connections-available">Connections Available</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_nxos.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="platform_nxos.html#using-nxapi-in-ansible-2-5">Using nxAPI in Ansible 2.5</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-</div>
-<div class="section" id="connections-available">
-<h2><a class="toc-backref" href="#id3">Connections Available</a><a class="headerlink" href="#connections-available" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="docutils">
-<colgroup>
-<col width="23%" />
-<col width="41%" />
-<col width="36%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head"></th>
-<th class="head">CLI</th>
-<th class="head">eAPI</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td><strong>Protocol</strong></td>
-<td>SSH</td>
-<td>HTTP(S)</td>
-</tr>
-<tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><strong>Credentials</strong></div>
-<div class="line"><br /></div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">uses SSH keys / SSH-agent if present</div>
-<div class="line">accepts <code class="docutils literal"><span class="pre">-u</span> <span class="pre">myuser</span> <span class="pre">-k</span></code> if using password</div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">uses HTTPS certificates if present</div>
-<div class="line"><br /></div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><strong>Indirect Access</strong></td>
-<td>via a bastion (jump host)</td>
-<td>via a web proxy</td>
-</tr>
-<tr class="row-odd"><td><div class="first last line-block">
-<div class="line"><strong>Connection Settings</strong></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ansible_connection:</span> <span class="pre">network_cli</span></code></div>
-<div class="line"><br /></div>
-<div class="line"><br /></div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line"><code class="docutils literal"><span class="pre">ansible_connection:</span> <span class="pre">local</span></code></div>
-<div class="line">Requires <code class="docutils literal"><span class="pre">transport:</span> <span class="pre">eapi</span></code></div>
-<div class="line">in the <code class="docutils literal"><span class="pre">provider</span></code> dictionary</div>
-</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="first last line-block">
-<div class="line"><strong>Enable Mode</strong></div>
-<div class="line">(Privilege Escalation)</div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">supported - use <code class="docutils literal"><span class="pre">ansible_become:</span> <span class="pre">yes</span></code></div>
-<div class="line">with <code class="docutils literal"><span class="pre">ansible_become_method:</span> <span class="pre">enable</span></code></div>
-</div>
-</td>
-<td><div class="first last line-block">
-<div class="line">supported - use <code class="docutils literal"><span class="pre">authorize:</span> <span class="pre">yes</span></code></div>
-<div class="line">in the <code class="docutils literal"><span class="pre">provider</span></code> dictionary</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><strong>Returned Data Format</strong></td>
-<td><code class="docutils literal"><span class="pre">stdout[0].</span></code></td>
-<td><code class="docutils literal"><span class="pre">stdout[0].messages[0].</span></code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="using-cli-in-ansible-2-5">
-<h2><a class="toc-backref" href="#id4">Using CLI in Ansible 2.5</a><a class="headerlink" href="#using-cli-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="example-cli-group-vars-eos-yml">
-<h3><a class="toc-backref" href="#id5">Example CLI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a><a class="headerlink" href="#example-cli-group-vars-eos-yml" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">network_cli</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">eos</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault...</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become_method</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">enable</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_common_args</span><span class="p p-Indicator">:</span> <span class="s">&#39;-o</span><span class="nv"> </span><span class="s">ProxyCommand=&quot;ssh</span><span class="nv"> </span><span class="s">-W</span><span class="nv"> </span><span class="s">%h:%p</span><span class="nv"> </span><span class="s">-q</span><span class="nv"> </span><span class="s">bastion01&quot;&#39;</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li>If you are using SSH keys (including an ssh-agent) you can remove the <code class="docutils literal"><span class="pre">ansible_ssh_pass</span></code> configuration.</li>
-<li>If you are accessing your host directly (not through a bastion/jump host) you can remove the <code class="docutils literal"><span class="pre">ansible_ssh_common_args</span></code> configuration.</li>
-<li>If you are accessing your host through a bastion/jump host, you cannot include your SSH password in the <code class="docutils literal"><span class="pre">ProxyCommand</span></code> directive. To prevent secrets from leaking out (for example in <code class="docutils literal"><span class="pre">ps</span></code> output), SSH does not support providing passwords via environment variables.</li>
-</ul>
-</div>
-<div class="section" id="example-cli-task">
-<h3><a class="toc-backref" href="#id6">Example CLI Task</a><a class="headerlink" href="#example-cli-task" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup switch (eos)</span>
-  <span class="l l-Scalar l-Scalar-Plain">eos_config</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-  <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">backup_eos_location</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;eos&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="using-eapi-in-ansible-2-5">
-<h2><a class="toc-backref" href="#id7">Using eAPI in Ansible 2.5</a><a class="headerlink" href="#using-eapi-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="enabling-eapi">
-<h3><a class="toc-backref" href="#id8">Enabling eAPI</a><a class="headerlink" href="#enabling-eapi" title="Permalink to this headline">¶</a></h3>
-<p>Before you can use eAPI to connect to a switch, you must enable eAPI. To enable eAPI on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">eos_eapi</span></code> module via the CLI connection. Set up group_vars/eos.yml just like in the CLI example above, then run a playbook task like this:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable eAPI</span>
-   <span class="l l-Scalar l-Scalar-Plain">eos_eapi</span><span class="p p-Indicator">:</span>
-       <span class="l l-Scalar l-Scalar-Plain">enable_http</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-       <span class="l l-Scalar l-Scalar-Plain">enable_https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-  <span class=" -Error"> </span><span class="l l-Scalar l-Scalar-Plain">become</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-   <span class="l l-Scalar l-Scalar-Plain">become_method</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">enable</span>
-   <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;eos&#39;</span>
-</pre></div>
-</div>
-<p>To find out more about the options for enabling HTTP/HTTPS and local http see the <a class="reference internal" href="../../module_docs/eos_eapi_module.html#eos-eapi"><span class="std std-ref">eos_eapi</span></a> module documentation.</p>
-<p>Once eAPI is enabled, change your <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code> to use the eAPI connection.</p>
-</div>
-<div class="section" id="example-eapi-group-vars-eos-yml">
-<h3><a class="toc-backref" href="#id9">Example eAPI <code class="docutils literal"><span class="pre">group_vars/eos.yml</span></code></a><a class="headerlink" href="#example-eapi-group-vars-eos-yml" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">eos</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault</span> <span class="p p-Indicator">|</span>
-<span class="l l-Scalar l-Scalar-Plain">eapi</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">transport</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">eapi</span>
-<span class="l l-Scalar l-Scalar-Plain">proxy_env</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">http_proxy</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">http://proxy.example.com:8080</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li>If you are accessing your host directly (not through a web proxy) you can remove the <code class="docutils literal"><span class="pre">proxy_env</span></code> configuration.</li>
-<li>If you are accessing your host through a web proxy using <code class="docutils literal"><span class="pre">https</span></code>, change <code class="docutils literal"><span class="pre">http_proxy</span></code> to <code class="docutils literal"><span class="pre">https_proxy</span></code>.</li>
-</ul>
-</div>
-<div class="section" id="example-eapi-task">
-<h3><a class="toc-backref" href="#id10">Example eAPI Task</a><a class="headerlink" href="#example-eapi-task" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup switch (eos)</span>
-  <span class="l l-Scalar l-Scalar-Plain">eos_config</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-    <span class="l l-Scalar l-Scalar-Plain">provider</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">eapi</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">register</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">backup_eos_location</span>
-  <span class="l l-Scalar l-Scalar-Plain">environment</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">proxy_env</span><span class="nv"> </span><span class="s">}}&quot;</span>
-  <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;eos&#39;</span>
-</pre></div>
-</div>
-<p>In this example two variables defined in <code class="docutils literal"><span class="pre">group_vars</span></code> get passed to the module of the task:</p>
-<ul class="simple">
-<li>the <code class="docutils literal"><span class="pre">eapi</span></code> variable gets passed to the <code class="docutils literal"><span class="pre">provider</span></code> option of the module</li>
-<li>the <code class="docutils literal"><span class="pre">proxy_env</span></code> variable gets passed to the <code class="docutils literal"><span class="pre">environment</span></code> option of the module</li>
-</ul>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Never store passwords in plain text. We recommend using <a class="reference internal" href="../../user_guide/playbooks_vault.html#playbooks-vault"><span class="std std-ref">Ansible Vault</span></a> to encrypt all sensitive variables.</p>
-</div>
-</div>
 </div>
 </div>
 

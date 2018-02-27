@@ -626,7 +626,6 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../modules/modules_by_category.html">Module Index</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../modules/list_of_all_modules.html">All modules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/list_of_network_modules.html">Network modules</a></li>
 </ul>
 </li>
 </ul>
@@ -1341,46 +1340,7 @@
 <p class="caption"><span class="caption-text">Reference &amp; Appendices</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../modules/modules_by_category.html">Module Index</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/list_of_all_modules.html">All modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../modules/eos_command_module.html">eos_command  --  Run arbitrary commands on an Arista EOS device</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/eos_command_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/eos_command_module.html#options">Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/eos_command_module.html#examples">Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/eos_command_module.html#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/eos_command_module.html#notes">Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../modules/ios_command_module.html">ios_command  --  Run commands on remote devices running Cisco IOS</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/ios_command_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/ios_command_module.html#options">Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/ios_command_module.html#examples">Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/ios_command_module.html#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/ios_command_module.html#notes">Notes</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../modules/vyos_config_module.html">vyos_config  --  Manage VyOS configuration on remote device</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/vyos_config_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/vyos_config_module.html#options">Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/vyos_config_module.html#examples">Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/vyos_config_module.html#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/vyos_config_module.html#notes">Notes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../../modules/list_of_network_modules.html">Network modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#eos">Eos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/eos_command_module.html">eos_command  --  Run arbitrary commands on an Arista EOS device</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#ios">Ios</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/ios_command_module.html">ios_command  --  Run commands on remote devices running Cisco IOS</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#vyos">Vyos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../modules/vyos_config_module.html">vyos_config  --  Manage VyOS configuration on remote device</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="../../modules/list_of_all_modules.html">All modules</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -1853,7 +1813,7 @@
           
   <div class="section" id="nxos-platform-options">
 <span id="id1"></span><h1><a class="toc-backref" href="#id2">NXOS Platform Options</a><a class="headerlink" href="#nxos-platform-options" title="Permalink to this headline">¶</a></h1>
-<p>Cisco EOS supports multiple connections. This page offers details on how each connection works in Ansible 2.5 and how to use it.</p>
+<p>Cisco NXOS supports multiple connections. This page offers details on how each connection works in Ansible 2.5 and how to use it.</p>
 <div class="contents topic" id="topics">
 <p class="topic-title first">Topics</p>
 <ul class="simple">
@@ -1962,8 +1922,6 @@
 <span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nxos</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault...</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_become_method</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">enable</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_common_args</span><span class="p p-Indicator">:</span> <span class="s">&#39;-o</span><span class="nv"> </span><span class="s">ProxyCommand=&quot;ssh</span><span class="nv"> </span><span class="s">-W</span><span class="nv"> </span><span class="s">%h:%p</span><span class="nv"> </span><span class="s">-q</span><span class="nv"> </span><span class="s">bastion01&quot;&#39;</span>
 </pre></div>
 </div>
@@ -1993,9 +1951,7 @@
    <span class="l l-Scalar l-Scalar-Plain">nxos_nxapi</span><span class="p p-Indicator">:</span>
        <span class="l l-Scalar l-Scalar-Plain">enable_http</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
        <span class="l l-Scalar l-Scalar-Plain">enable_https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
-  <span class=" -Error"> </span><span class="l l-Scalar l-Scalar-Plain">become</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-   <span class="l l-Scalar l-Scalar-Plain">become_method</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">enable</span>
-   <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;nxos&#39;</span>
+  <span class=" -Error"> </span><span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;nxos&#39;</span>
 </pre></div>
 </div>
 <p>To find out more about the options for enabling HTTP/HTTPS and local http see the <a class="reference internal" href="../../module_docs/nxos_nxapi_module.html#nxos-nxapi"><span class="std std-ref">nxos_nxapi</span></a> module documentation.</p>
@@ -2037,7 +1993,7 @@
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Never store passwords in plain text. We recommend using <a class="reference internal" href="../../user_guide/playbooks_vault.html#playbooks-vault"><span class="std std-ref">Ansible Vault</span></a> to encrypt all sensitive variables.</p>
+<p class="last">Never store passwords in plain text. We recommend using SSH keys to authenticate SSH connections. Ansible supports ssh-agent to manage your SSH keys. If you must use passwords to authenticate SSH connections, we recommend encrypting them with <a class="reference internal" href="../../user_guide/playbooks_vault.html#playbooks-vault"><span class="std std-ref">Ansible Vault</span></a>.</p>
 </div>
 </div>
 </div>
@@ -2063,7 +2019,7 @@
   <p>
   Copyright © 2018 Red Hat, Inc.
   <br>
-    Last updated on Feb 26, 2018.
+    Last updated on Feb 27, 2018.
   </p>
 <p>
 Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</a> using <a href="http://sphinx-doc.org/">Sphinx</a> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>.

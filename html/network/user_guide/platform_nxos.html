@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Playbook Keywords" href="../../reference_appendices/playbooks_keywords.html" />
-    <link rel="prev" title="JUNOS Platform Options" href="platform_junos.html" /> 
+    <link rel="prev" title="Junos OS Platform Options" href="platform_junos.html" /> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -1337,7 +1337,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="platform_index.html">Platform Options</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="platform_eos.html">EOS Platform Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="platform_ios.html">IOS Platform Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="platform_junos.html">JUNOS Platform Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="platform_junos.html">Junos OS Platform Options</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">NXOS Platform Options</a></li>
 </ul>
 </li>
@@ -1833,10 +1833,10 @@
 <li><a class="reference internal" href="#example-cli-task" id="id6">Example CLI Task</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-nxapi-in-ansible-2-5" id="id7">Using nxAPI in Ansible 2.5</a><ul>
-<li><a class="reference internal" href="#enabling-nxapi" id="id8">Enabling nxAPI</a></li>
-<li><a class="reference internal" href="#example-nxapi-group-vars-nxos-yml" id="id9">Example nxAPI <code class="docutils literal"><span class="pre">group_vars/nxos.yml</span></code></a></li>
-<li><a class="reference internal" href="#example-nxapi-task" id="id10">Example nxAPI Task</a></li>
+<li><a class="reference internal" href="#using-nx-api-in-ansible-2-5" id="id7">Using NX-API in Ansible 2.5</a><ul>
+<li><a class="reference internal" href="#enabling-nx-api" id="id8">Enabling NX-API</a></li>
+<li><a class="reference internal" href="#example-nx-api-group-vars-nxos-yml" id="id9">Example NX-API <code class="docutils literal"><span class="pre">group_vars/nxos.yml</span></code></a></li>
+<li><a class="reference internal" href="#example-nx-api-task" id="id10">Example NX-API Task</a></li>
 </ul>
 </li>
 </ul>
@@ -1854,7 +1854,7 @@
 <thead valign="bottom">
 <tr class="row-odd"><th class="head"></th>
 <th class="head">CLI</th>
-<th class="head">nxAPI</th>
+<th class="head">NX-API</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -1951,12 +1951,12 @@
 </div>
 </div>
 </div>
-<div class="section" id="using-nxapi-in-ansible-2-5">
-<h2><a class="toc-backref" href="#id7">Using nxAPI in Ansible 2.5</a><a class="headerlink" href="#using-nxapi-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="enabling-nxapi">
-<h3><a class="toc-backref" href="#id8">Enabling nxAPI</a><a class="headerlink" href="#enabling-nxapi" title="Permalink to this headline">¶</a></h3>
-<p>Before you can use nxAPI to connect to a switch, you must enable nxAPI. To enable nxAPI on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">nxos_nxapi</span></code> module via the CLI connection. Set up group_vars/nxos.yml just like in the CLI example above, then run a playbook task like this:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable nxAPI</span>
+<div class="section" id="using-nx-api-in-ansible-2-5">
+<h2><a class="toc-backref" href="#id7">Using NX-API in Ansible 2.5</a><a class="headerlink" href="#using-nx-api-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enabling-nx-api">
+<h3><a class="toc-backref" href="#id8">Enabling NX-API</a><a class="headerlink" href="#enabling-nx-api" title="Permalink to this headline">¶</a></h3>
+<p>Before you can use NX-API to connect to a switch, you must enable NX-API. To enable NX-API on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">nxos_nxapi</span></code> module via the CLI connection. Set up group_vars/nxos.yml just like in the CLI example above, then run a playbook task like this:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable NX-API</span>
    <span class="l l-Scalar l-Scalar-Plain">nxos_nxapi</span><span class="p p-Indicator">:</span>
        <span class="l l-Scalar l-Scalar-Plain">enable_http</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
        <span class="l l-Scalar l-Scalar-Plain">enable_https</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -1964,14 +1964,14 @@
 </pre></div>
 </div>
 <p>To find out more about the options for enabling HTTP/HTTPS and local http see the <a class="reference internal" href="../../module_docs/nxos_nxapi_module.html#nxos-nxapi"><span class="std std-ref">nxos_nxapi</span></a> module documentation.</p>
-<p>Once nxAPI is enabled, change your <code class="docutils literal"><span class="pre">group_vars/nxos.yml</span></code> to use the nxAPI connection.</p>
+<p>Once NX-API is enabled, change your <code class="docutils literal"><span class="pre">group_vars/nxos.yml</span></code> to use the NX-API connection.</p>
 </div>
-<div class="section" id="example-nxapi-group-vars-nxos-yml">
-<h3><a class="toc-backref" href="#id9">Example nxAPI <code class="docutils literal"><span class="pre">group_vars/nxos.yml</span></code></a><a class="headerlink" href="#example-nxapi-group-vars-nxos-yml" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-nx-api-group-vars-nxos-yml">
+<h3><a class="toc-backref" href="#id9">Example NX-API <code class="docutils literal"><span class="pre">group_vars/nxos.yml</span></code></a><a class="headerlink" href="#example-nx-api-group-vars-nxos-yml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nxos</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault...</span>
+<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault...</span>
 <span class="l l-Scalar l-Scalar-Plain">nxapi</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">host</span><span class="p p-Indicator">:</span> <span class="s">&quot;{{</span><span class="nv"> </span><span class="s">inventory_hostname</span><span class="nv"> </span><span class="s">}}&quot;</span>
   <span class="l l-Scalar l-Scalar-Plain">transport</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">nxapi</span>
@@ -1984,8 +1984,8 @@
 <li>If you are accessing your host through a web proxy using <code class="docutils literal"><span class="pre">https</span></code>, change <code class="docutils literal"><span class="pre">http_proxy</span></code> to <code class="docutils literal"><span class="pre">https_proxy</span></code>.</li>
 </ul>
 </div>
-<div class="section" id="example-nxapi-task">
-<h3><a class="toc-backref" href="#id10">Example nxAPI Task</a><a class="headerlink" href="#example-nxapi-task" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-nx-api-task">
+<h3><a class="toc-backref" href="#id10">Example NX-API Task</a><a class="headerlink" href="#example-nx-api-task" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup current switch config (nxos)</span>
   <span class="l l-Scalar l-Scalar-Plain">nxos_config</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -2018,7 +2018,7 @@
         <a href="../../reference_appendices/playbooks_keywords.html" class="btn btn-neutral float-right" title="Playbook Keywords"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="platform_junos.html" class="btn btn-neutral" title="JUNOS Platform Options"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="platform_junos.html" class="btn btn-neutral" title="Junos OS Platform Options"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   

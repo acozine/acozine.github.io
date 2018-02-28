@@ -19,7 +19,7 @@
   <!-- End Google Tag Manager Data Layer -->
 
   
-  <title>JUNOS Platform Options &mdash; Ansible Documentation</title>
+  <title>Junos OS Platform Options &mdash; Ansible Documentation</title>
   
 
   
@@ -1337,7 +1337,7 @@
 <li class="toctree-l3 current"><a class="reference internal" href="platform_index.html">Platform Options</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="platform_eos.html">EOS Platform Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="platform_ios.html">IOS Platform Options</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#">JUNOS Platform Options</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Junos OS Platform Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="platform_nxos.html">NXOS Platform Options</a></li>
 </ul>
 </li>
@@ -1809,7 +1809,7 @@
 
           <ul class="wy-breadcrumbs">
   <li><a href="../../index.html">Docs</a> &raquo;</li>
-  <li><a href="">JUNOS Platform Options</a></li>
+  <li><a href="">Junos OS Platform Options</a></li>
   
     <li class="wy-breadcrumbs-aside">
       <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/network/user_guide/platform_junos.rst" class="icon icon-github"> Edit on GitHub</a>
@@ -1820,23 +1820,23 @@
 
           <div id="page-content">
           
-  <div class="section" id="junos-platform-options">
-<span id="id1"></span><h1><a class="toc-backref" href="#id2">JUNOS Platform Options</a><a class="headerlink" href="#junos-platform-options" title="Permalink to this headline">¶</a></h1>
-<p>Juniper JUNOS supports multiple connections. This page offers details on how each connection works in Ansible 2.5 and how to use it.</p>
+  <div class="section" id="junos-os-platform-options">
+<span id="junos-platform-options"></span><h1><a class="toc-backref" href="#id1">Junos OS Platform Options</a><a class="headerlink" href="#junos-os-platform-options" title="Permalink to this headline">¶</a></h1>
+<p>Juniper Junos OS supports multiple connections. This page offers details on how each connection works in Ansible 2.5 and how to use it.</p>
 <div class="contents topic" id="topics">
 <p class="topic-title first">Topics</p>
 <ul class="simple">
-<li><a class="reference internal" href="#junos-platform-options" id="id2">JUNOS Platform Options</a><ul>
-<li><a class="reference internal" href="#connections-available" id="id3">Connections Available</a></li>
-<li><a class="reference internal" href="#using-cli-in-ansible-2-5" id="id4">Using CLI in Ansible 2.5</a><ul>
-<li><a class="reference internal" href="#example-cli-group-vars-junos-yml" id="id5">Example CLI <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a></li>
-<li><a class="reference internal" href="#example-cli-task" id="id6">Example CLI Task</a></li>
+<li><a class="reference internal" href="#junos-os-platform-options" id="id1">Junos OS Platform Options</a><ul>
+<li><a class="reference internal" href="#connections-available" id="id2">Connections Available</a></li>
+<li><a class="reference internal" href="#using-cli-in-ansible-2-5" id="id3">Using CLI in Ansible 2.5</a><ul>
+<li><a class="reference internal" href="#example-cli-group-vars-junos-yml" id="id4">Example CLI <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a></li>
+<li><a class="reference internal" href="#example-cli-task" id="id5">Example CLI Task</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#using-netconf-in-ansible-2-5" id="id7">Using Netconf in Ansible 2.5</a><ul>
-<li><a class="reference internal" href="#enabling-netconf" id="id8">Enabling Netconf</a></li>
-<li><a class="reference internal" href="#example-netconf-group-vars-junos-yml" id="id9">Example Netconf <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a></li>
-<li><a class="reference internal" href="#example-netconf-task" id="id10">Example Netconf Task</a></li>
+<li><a class="reference internal" href="#using-netconf-in-ansible-2-5" id="id6">Using NETCONF in Ansible 2.5</a><ul>
+<li><a class="reference internal" href="#enabling-netconf" id="id7">Enabling NETCONF</a></li>
+<li><a class="reference internal" href="#example-netconf-group-vars-junos-yml" id="id8">Example NETCONF <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a></li>
+<li><a class="reference internal" href="#example-netconf-task" id="id9">Example NETCONF Task</a></li>
 </ul>
 </li>
 </ul>
@@ -1844,7 +1844,7 @@
 </ul>
 </div>
 <div class="section" id="connections-available">
-<h2><a class="toc-backref" href="#id3">Connections Available</a><a class="headerlink" href="#connections-available" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id2">Connections Available</a><a class="headerlink" href="#connections-available" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
 <col width="15%" />
@@ -1863,8 +1863,8 @@
 </div>
 </th>
 <th class="head"><div class="first last line-block">
-<div class="line">Netconf</div>
-<div class="line">* all modules except <code class="docutils literal"><span class="pre">junos_netconf</span></code>, which enables Netconf</div>
+<div class="line">NETCONF</div>
+<div class="line">* all modules except <code class="docutils literal"><span class="pre">junos_netconf</span></code>, which enables NETCONF</div>
 </div>
 </th>
 </tr>
@@ -1904,12 +1904,12 @@
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">not supported by JUNOS</div>
+<div class="line">not supported by Junos OS</div>
 <div class="line"><br /></div>
 </div>
 </td>
 <td><div class="first last line-block">
-<div class="line">not supported by JUNOS</div>
+<div class="line">not supported by Junos OS</div>
 <div class="line"><br /></div>
 </div>
 </td>
@@ -1938,9 +1938,9 @@
 <p>For legacy playbooks, Ansible still supports <code class="docutils literal"><span class="pre">ansible_connection:</span> <span class="pre">local</span></code> on all JUNOS modules. We recommend modernizing to use <code class="docutils literal"><span class="pre">ansible_connection:</span> <span class="pre">netconf</span></code> or <code class="docutils literal"><span class="pre">ansible_connection:</span> <span class="pre">network_cli</span></code> as soon as possible.</p>
 </div>
 <div class="section" id="using-cli-in-ansible-2-5">
-<h2><a class="toc-backref" href="#id4">Using CLI in Ansible 2.5</a><a class="headerlink" href="#using-cli-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id3">Using CLI in Ansible 2.5</a><a class="headerlink" href="#using-cli-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-cli-group-vars-junos-yml">
-<h3><a class="toc-backref" href="#id5">Example CLI <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a><a class="headerlink" href="#example-cli-group-vars-junos-yml" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id4">Example CLI <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a><a class="headerlink" href="#example-cli-group-vars-junos-yml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">network_cli</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">junos</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
@@ -1955,7 +1955,7 @@
 </ul>
 </div>
 <div class="section" id="example-cli-task">
-<h3><a class="toc-backref" href="#id6">Example CLI Task</a><a class="headerlink" href="#example-cli-task" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id5">Example CLI Task</a><a class="headerlink" href="#example-cli-task" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup current switch config (junos)</span>
   <span class="l l-Scalar l-Scalar-Plain">junos_config</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
@@ -1966,34 +1966,34 @@
 </div>
 </div>
 <div class="section" id="using-netconf-in-ansible-2-5">
-<h2><a class="toc-backref" href="#id7">Using Netconf in Ansible 2.5</a><a class="headerlink" href="#using-netconf-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">Using NETCONF in Ansible 2.5</a><a class="headerlink" href="#using-netconf-in-ansible-2-5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="enabling-netconf">
-<h3><a class="toc-backref" href="#id8">Enabling Netconf</a><a class="headerlink" href="#enabling-netconf" title="Permalink to this headline">¶</a></h3>
-<p>Before you can use Netconf to connect to a switch, you must:</p>
+<h3><a class="toc-backref" href="#id7">Enabling NETCONF</a><a class="headerlink" href="#enabling-netconf" title="Permalink to this headline">¶</a></h3>
+<p>Before you can use NETCONF to connect to a switch, you must:</p>
 <ul class="simple">
 <li>install the <code class="docutils literal"><span class="pre">ncclient</span></code> python package on your control node(s) with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ncclient</span></code></li>
-<li>enable Netconf on the JunOS device(s)</li>
+<li>enable NETCONF on the Junos OS device(s)</li>
 </ul>
-<p>To enable Netconf on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">junos_netconf</span></code> module via the CLI connection. Set up group_vars/junos.yml just like in the CLI example above, then run a playbook task like this:</p>
-<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable Netconf</span>
+<p>To enable NETCONF on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">junos_netconf</span></code> module via the CLI connection. Set up group_vars/junos.yml just like in the CLI example above, then run a playbook task like this:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable NETCONF</span>
    <span class="l l-Scalar l-Scalar-Plain">junos_netconf</span><span class="p p-Indicator">:</span>
    <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;junos&#39;</span>
 </pre></div>
 </div>
-<p>Once Netconf is enabled, change your <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code> to use the Netconf connection.</p>
+<p>Once NETCONF is enabled, change your <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code> to use the NETCONF connection.</p>
 </div>
 <div class="section" id="example-netconf-group-vars-junos-yml">
-<h3><a class="toc-backref" href="#id9">Example Netconf <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a><a class="headerlink" href="#example-netconf-group-vars-junos-yml" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Example NETCONF <code class="docutils literal"><span class="pre">group_vars/junos.yml</span></code></a><a class="headerlink" href="#example-netconf-group-vars-junos-yml" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">netconf</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_network_os</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">junos</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_user</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">myuser</span>
-<span class="l l-Scalar l-Scalar-Plain">ansible_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault</span> <span class="p p-Indicator">|</span>
+<span class="l l-Scalar l-Scalar-Plain">ansible_ssh_pass</span><span class="p p-Indicator">:</span> <span class="kt">!vault</span> <span class="p p-Indicator">|</span>
 <span class="l l-Scalar l-Scalar-Plain">ansible_ssh_common_args</span><span class="p p-Indicator">:</span> <span class="s">&#39;-o</span><span class="nv"> </span><span class="s">ProxyCommand=&quot;ssh</span><span class="nv"> </span><span class="s">-W</span><span class="nv"> </span><span class="s">%h:%p</span><span class="nv"> </span><span class="s">-q</span><span class="nv"> </span><span class="s">bastion01&quot;&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="example-netconf-task">
-<h3><a class="toc-backref" href="#id10">Example Netconf Task</a><a class="headerlink" href="#example-netconf-task" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Example NETCONF Task</a><a class="headerlink" href="#example-netconf-task" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Backup current switch config (junos)</span>
   <span class="l l-Scalar l-Scalar-Plain">junos_config</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">backup</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>

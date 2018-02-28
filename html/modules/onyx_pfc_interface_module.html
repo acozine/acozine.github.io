@@ -526,7 +526,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_loops.html#using-register-with-a-loop">Using register with a loop</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_loops.html#looping-over-the-inventory">Looping over the inventory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_loops.html#loop-control">Loop Control</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_loops.html#loops-and-includes-in-2-0">Loops and Includes in 2.0</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/playbooks_blocks.html">Blocks</a><ul>
@@ -780,7 +779,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../community/index.html">Ansible Community Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../community/development_process.html">The Ansible Development Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../community/development_process.html#road-maps">Road Maps</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../community/development_process.html#pull-requests">Pull Requests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../community/development_process.html#pull-requests">Pull Requests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/development_process.html#backport-pull-request-process">Backport Pull Request Process</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../community/development_process.html#ansibullbot">Ansibullbot</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../community/development_process.html#overview">Overview</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../community/development_process.html#community-maintainers">Community Maintainers</a></li>
@@ -1200,9 +1202,9 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-modules">Using the ACI modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#standard-module-parameters">Standard module parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#common-parameters">Common parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#proxy-support">Proxy support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#module-return-values">Module return values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#return-values">Return values</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#id1">More information</a></li>
 </ul>
 </li>
@@ -1218,7 +1220,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-aci-rest-with-ansible">Using ACI REST with Ansible</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-rest-module">Using the aci-rest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#built-in-idempotency">Built-in idempotency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-rest-module">Using the aci_rest module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#id3">More information</a></li>
 </ul>
 </li>
@@ -1418,7 +1421,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_aaa_user_certificate_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html">aci_access_port_to_interface_policy_leaf_profile  --  Manage Fabric interface policy leaf profile interface selectors on Cisco ACI fabrics (infra:HPortS, infra:RsAccBaseGrp, infra:PortBlk)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html">aci_access_port_to_interface_policy_leaf_profile  --  Manage Fabric interface policy leaf profile interface selectors (infra:HPortS, infra:RsAccBaseGrp, infra:PortBlk)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html#examples">Examples</a></li>
@@ -1426,16 +1429,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_aep_module.html">aci_aep  --  Manage attachable Access Entity Profile (AEP) on Cisco ACI fabrics (infra:AttEntityP|infra:ProvAcc)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_aep_module.html">aci_aep  --  Manage attachable Access Entity Profile (AEP) objects (infra:AttEntityP, infra:ProvAcc)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_aep_to_domain_module.html">aci_aep_to_domain  --  Bind AEPs to Physical or Virtual Domains on Cisco ACI fabrics (infra:RsDomP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_aep_to_domain_module.html">aci_aep_to_domain  --  Bind AEPs to Physical or Virtual Domains (infra:RsDomP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_to_domain_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_to_domain_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_to_domain_module.html#examples">Examples</a></li>
@@ -1443,7 +1445,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_aep_to_domain_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_ap_module.html">aci_ap  --  Manage top level Application Profile (AP) objects on Cisco ACI fabrics (fv:Ap)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_ap_module.html">aci_ap  --  Manage top level Application Profile (AP) objects (fv:Ap)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_ap_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_ap_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_ap_module.html#examples">Examples</a></li>
@@ -1451,7 +1453,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_ap_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_bd_module.html">aci_bd  --  Manage Bridge Domains (BD) on Cisco ACI Fabrics (fv:BD)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_bd_module.html">aci_bd  --  Manage Bridge Domains (BD) objects (fv:BD)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_module.html#examples">Examples</a></li>
@@ -1459,7 +1461,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_bd_subnet_module.html">aci_bd_subnet  --  Manage Subnets on Cisco ACI fabrics (fv:Subnet)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_bd_subnet_module.html">aci_bd_subnet  --  Manage Subnets (fv:Subnet)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_subnet_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_subnet_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_subnet_module.html#examples">Examples</a></li>
@@ -1467,7 +1469,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_subnet_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_bd_to_l3out_module.html">aci_bd_to_l3out  --  Bind Bridge Domain to L3 Out on Cisco ACI fabrics (fv:RsBDToOut)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_bd_to_l3out_module.html">aci_bd_to_l3out  --  Bind Bridge Domain to L3 Out (fv:RsBDToOut)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_to_l3out_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_to_l3out_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_to_l3out_module.html#examples">Examples</a></li>
@@ -1475,7 +1477,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_bd_to_l3out_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_config_rollback_module.html">aci_config_rollback  --  Provides rollback and rollback preview functionality for Cisco ACI fabrics (config:ImportP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_config_rollback_module.html">aci_config_rollback  --  Provides rollback and rollback preview functionality (config:ImportP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_config_rollback_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_config_rollback_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_config_rollback_module.html#examples">Examples</a></li>
@@ -1483,7 +1485,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_config_rollback_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_config_snapshot_module.html">aci_config_snapshot  --  Manage Config Snapshots on Cisco ACI fabrics (config:Snapshot, config:ExportP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_config_snapshot_module.html">aci_config_snapshot  --  Manage Config Snapshots (config:Snapshot, config:ExportP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_config_snapshot_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_config_snapshot_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_config_snapshot_module.html#examples">Examples</a></li>
@@ -1491,7 +1493,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_config_snapshot_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_contract_module.html">aci_contract  --  Manage contract resources on Cisco ACI fabrics (vz:BrCP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_contract_module.html">aci_contract  --  Manage contract resources (vz:BrCP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_module.html#examples">Examples</a></li>
@@ -1499,7 +1501,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_contract_subject_module.html">aci_contract_subject  --  Manage initial Contract Subjects on Cisco ACI fabrics (vz:Subj)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_contract_subject_module.html">aci_contract_subject  --  Manage initial Contract Subjects (vz:Subj)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_module.html#examples">Examples</a></li>
@@ -1507,16 +1509,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_contract_subject_to_filter_module.html">aci_contract_subject_to_filter  --  Bind Contract Subjects to Filters on Cisco ACI fabrics (vz:RsSubjFiltAtt)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_contract_subject_to_filter_module.html">aci_contract_subject_to_filter  --  Bind Contract Subjects to Filters (vz:RsSubjFiltAtt)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_domain_module.html">aci_domain  --  Manage physical, virtual, bridged, routed or FC domain profiles (*:DomP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_domain_module.html">aci_domain  --  Manage physical, virtual, bridged, routed or FC domain profiles (phys:DomP, vmm:DomP, l2ext:DomP, l3ext:DomP, fc:DomP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_module.html#examples">Examples</a></li>
@@ -1524,7 +1525,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_domain_to_encap_pool_module.html">aci_domain_to_encap_pool  --  Bind Domain to Encap Pools on Cisco ACI fabrics (infra:RsVlanNs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_domain_to_encap_pool_module.html">aci_domain_to_encap_pool  --  Bind Domain to Encap Pools (infra:RsVlanNs)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_encap_pool_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_encap_pool_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_encap_pool_module.html#examples">Examples</a></li>
@@ -1532,7 +1533,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_encap_pool_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html">aci_domain_to_vlan_pool  --  Bind Domain to VLAN Pools on Cisco ACI fabrics (infra:RsVlanNs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html">aci_domain_to_vlan_pool  --  Bind Domain to VLAN Pools (infra:RsVlanNs)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html#examples">Examples</a></li>
@@ -1540,7 +1541,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_encap_pool_module.html">aci_encap_pool  --  Manage encap pools on Cisco ACI fabrics (fvns:VlanInstP, fvns:VxlanInstP, fvns:VsanInstP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_encap_pool_module.html">aci_encap_pool  --  Manage encap pools (fvns:VlanInstP, fvns:VxlanInstP, fvns:VsanInstP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_module.html#examples">Examples</a></li>
@@ -1548,16 +1549,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_encap_pool_range_module.html">aci_encap_pool_range  --  Manage encap ranges assigned to pools on Cisco ACI fabrics (fvns:EncapBlk, fvns:VsanEncapBlk)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_encap_pool_range_module.html">aci_encap_pool_range  --  Manage encap ranges assigned to pools (fvns:EncapBlk, fvns:VsanEncapBlk)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_epg_module.html">aci_epg  --  Manage End Point Groups (EPG) on Cisco ACI fabrics (fv:AEPg)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_epg_module.html">aci_epg  --  Manage End Point Groups (EPG) objects (fv:AEPg)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_module.html#examples">Examples</a></li>
@@ -1565,16 +1565,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_epg_monitoring_policy_module.html">aci_epg_monitoring_policy  --  Manage monitoring policies on Cisco ACI fabrics (mon:EPGPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_epg_monitoring_policy_module.html">aci_epg_monitoring_policy  --  Manage monitoring policies (mon:EPGPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_epg_to_contract_module.html">aci_epg_to_contract  --  Bind EPGs to Contracts on Cisco ACI fabrics (fv:RsCons and fv:RsProv)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_epg_to_contract_module.html">aci_epg_to_contract  --  Bind EPGs to Contracts (fv:RsCons, fv:RsProv)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_contract_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_contract_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_contract_module.html#examples">Examples</a></li>
@@ -1582,7 +1581,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_contract_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_epg_to_domain_module.html">aci_epg_to_domain  --  Bind EPGs to Domains on Cisco ACI fabrics (fv:RsDomAtt)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_epg_to_domain_module.html">aci_epg_to_domain  --  Bind EPGs to Domains (fv:RsDomAtt)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_domain_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_domain_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_domain_module.html#examples">Examples</a></li>
@@ -1590,14 +1589,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_epg_to_domain_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_fabric_node_module.html">aci_fabric_node  --  Add a new Fabric Node Member on Cisco ACI fabrics (fabric:NodeIdentP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_fabric_node_module.html">aci_fabric_node  --  Manage Fabric Node Members (fabric:NodeIdentP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_filter_module.html">aci_filter  --  Manages top level filter objects on Cisco ACI fabrics (vz:Filter)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_filter_module.html">aci_filter  --  Manages top level filter objects (vz:Filter)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_module.html#examples">Examples</a></li>
@@ -1605,7 +1605,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_filter_entry_module.html">aci_filter_entry  --  Manage filter entries on Cisco ACI fabrics (vz:Entry)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_filter_entry_module.html">aci_filter_entry  --  Manage filter entries (vz:Entry)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_entry_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_entry_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_entry_module.html#examples">Examples</a></li>
@@ -1613,7 +1613,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_filter_entry_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_firmware_source_module.html">aci_firmware_source  --  Manage firmware image sources on Cisco ACI fabrics (firmware:OSource)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_firmware_source_module.html">aci_firmware_source  --  Manage firmware image sources (firmware:OSource)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_firmware_source_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_firmware_source_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_firmware_source_module.html#examples">Examples</a></li>
@@ -1621,7 +1621,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_firmware_source_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_fc_module.html">aci_interface_policy_fc  --  Manage Fibre Channel interface policies on Cisco ACI fabrics (fc:IfPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_fc_module.html">aci_interface_policy_fc  --  Manage Fibre Channel interface policies (fc:IfPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_fc_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_fc_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_fc_module.html#examples">Examples</a></li>
@@ -1629,7 +1629,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_fc_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_l2_module.html">aci_interface_policy_l2  --  Manage Layer 2 interface policies on Cisco ACI fabrics (l2:IfPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_l2_module.html">aci_interface_policy_l2  --  Manage Layer 2 interface policies (l2:IfPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_l2_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_l2_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_l2_module.html#examples">Examples</a></li>
@@ -1637,7 +1637,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_l2_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html">aci_interface_policy_leaf_policy_group  --  Add Fabric Interface Policy Leaf Policy Groups on Cisco ACI fabrics.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html">aci_interface_policy_leaf_policy_group  --  Manage fabric interface policy leaf policy groups (infra:AccBndlGrp, infra:AccPortGrp)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html#examples">Examples</a></li>
@@ -1645,7 +1645,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html">aci_interface_policy_leaf_profile  --  Manage Fabric interface policy leaf profiles on Cisco ACI fabrics (infra:AccPortP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html">aci_interface_policy_leaf_profile  --  Manage fabric interface policy leaf profiles (infra:AccPortP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html#examples">Examples</a></li>
@@ -1653,7 +1653,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_lldp_module.html">aci_interface_policy_lldp  --  Manage LLDP interface policies on Cisco ACI fabrics (lldp:IfPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_lldp_module.html">aci_interface_policy_lldp  --  Manage LLDP interface policies (lldp:IfPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_lldp_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_lldp_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_lldp_module.html#examples">Examples</a></li>
@@ -1661,7 +1661,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_lldp_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_mcp_module.html">aci_interface_policy_mcp  --  Manage MCP interface policies on Cisco ACI fabrics (mcp:IfPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_mcp_module.html">aci_interface_policy_mcp  --  Manage MCP interface policies (mcp:IfPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_mcp_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_mcp_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_mcp_module.html#examples">Examples</a></li>
@@ -1669,7 +1669,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_mcp_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_port_channel_module.html">aci_interface_policy_port_channel  --  Manage port channel interface policies on Cisco ACI fabrics (lacp:LagPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_port_channel_module.html">aci_interface_policy_port_channel  --  Manage port channel interface policies (lacp:LagPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_channel_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_channel_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_channel_module.html#examples">Examples</a></li>
@@ -1677,7 +1677,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_channel_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_port_security_module.html">aci_interface_policy_port_security  --  Manage port security on Cisco ACI fabrics (l2:PortSecurityPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_policy_port_security_module.html">aci_interface_policy_port_security  --  Manage port security (l2:PortSecurityPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_security_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_security_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_security_module.html#examples">Examples</a></li>
@@ -1685,7 +1685,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_security_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html">aci_interface_selector_to_switch_policy_leaf_profile  --  Associates an Interface Selector Profile to a Switch Policy Leaf Profile (infra:RsAccPortP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html">aci_interface_selector_to_switch_policy_leaf_profile  --  Bind interface selector profiles to switch policy leaf profiles (infra:RsAccPortP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html#examples">Examples</a></li>
@@ -1693,7 +1693,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html">aci_l3out_route_tag_policy  --  Manage route tag policies on Cisco ACI fabrics (l3ext:RouteTagPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html">aci_l3out_route_tag_policy  --  Manage route tag policies (l3ext:RouteTagPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html#examples">Examples</a></li>
@@ -1710,14 +1710,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_rest_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_static_binding_to_epg_module.html">aci_static_binding_to_epg  --  Bind static paths to EPGs on Cisco ACI fabrics (fv:RsPathAtt)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_static_binding_to_epg_module.html">aci_static_binding_to_epg  --  Bind static paths to EPGs (fv:RsPathAtt)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_switch_leaf_selector_module.html">aci_switch_leaf_selector  --  Add a leaf Selector with Node Block Range and Policy Group to a Switch Policy Leaf Profile on Cisco ACI fabrics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_switch_leaf_selector_module.html">aci_switch_leaf_selector  --  Bind leaf selectors to switch policy leaf profiles (infra:LeafS, infra:NodeBlk, infra:RsAccNodePGrep)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_leaf_selector_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_leaf_selector_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_leaf_selector_module.html#examples">Examples</a></li>
@@ -1725,7 +1726,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_leaf_selector_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html">aci_switch_policy_leaf_profile  --  Create switch policy leaf profiles on Cisco ACI fabrics (infra:NodeP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html">aci_switch_policy_leaf_profile  --  Manage switch policy leaf profiles (infra:NodeP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html#examples">Examples</a></li>
@@ -1733,14 +1734,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html">aci_switch_policy_vpc_protection_group  --  Create switch policy Explicit vPC Protection Group on Cisco ACI fabrics (fabric:ExplicitGEp, fabric:NodePEp).</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html">aci_switch_policy_vpc_protection_group  --  Manage switch policy explicit vPC protection groups (fabric:ExplicitGEp, fabric:NodePEp).</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_taboo_contract_module.html">aci_taboo_contract  --  Manage taboo contracts on Cisco ACI fabrics (vz:BrCP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_taboo_contract_module.html">aci_taboo_contract  --  Manage taboo contracts (vz:BrCP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_taboo_contract_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_taboo_contract_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_taboo_contract_module.html#examples">Examples</a></li>
@@ -1748,7 +1750,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_taboo_contract_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_tenant_module.html">aci_tenant  --  Manage tenants on Cisco ACI fabrics (fv:Tenant)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_tenant_module.html">aci_tenant  --  Manage tenants (fv:Tenant)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_module.html#examples">Examples</a></li>
@@ -1756,7 +1758,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html">aci_tenant_action_rule_profile  --  Manage action rule profiles on Cisco ACI fabrics (rtctrl:AttrP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html">aci_tenant_action_rule_profile  --  Manage action rule profiles (rtctrl:AttrP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html#examples">Examples</a></li>
@@ -1764,7 +1766,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html">aci_tenant_ep_retention_policy  --  Manage End Point (EP) retention protocol policies on Cisco ACI fabrics (fv:EpRetPol)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html">aci_tenant_ep_retention_policy  --  Manage End Point (EP) retention protocol policies (fv:EpRetPol)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html#examples">Examples</a></li>
@@ -1772,7 +1774,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_tenant_span_dst_group_module.html">aci_tenant_span_dst_group  --  Manage SPAN destination groups on Cisco ACI fabrics (span:DestGrp)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_tenant_span_dst_group_module.html">aci_tenant_span_dst_group  --  Manage SPAN destination groups (span:DestGrp)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_dst_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_dst_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_dst_group_module.html#examples">Examples</a></li>
@@ -1780,7 +1782,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_dst_group_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_tenant_span_src_group_module.html">aci_tenant_span_src_group  --  Manage SPAN source groups on Cisco ACI fabrics (span:SrcGrp)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_tenant_span_src_group_module.html">aci_tenant_span_src_group  --  Manage SPAN source groups (span:SrcGrp)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_module.html#examples">Examples</a></li>
@@ -1788,7 +1790,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html">aci_tenant_span_src_group_to_dst_group  --  Manage SPAN source group to destination group bindings on Cisco ACI fabrics (span:SpanLbl)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html">aci_tenant_span_src_group_to_dst_group  --  Bind SPAN source groups to destination groups (span:SpanLbl)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html#examples">Examples</a></li>
@@ -1796,7 +1798,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_vlan_pool_module.html">aci_vlan_pool  --  Manage VLAN pools on Cisco ACI fabrics (fvns:VlanInstP)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_vlan_pool_module.html">aci_vlan_pool  --  Manage VLAN pools (fvns:VlanInstP)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_module.html#examples">Examples</a></li>
@@ -1804,16 +1806,15 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html">aci_vlan_pool_encap_block  --  Manage encap blocks assigned to VLAN pools on Cisco ACI fabrics (fvns:EncapBlk)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html">aci_vlan_pool_encap_block  --  Manage encap blocks assigned to VLAN pools (fvns:EncapBlk)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="aci_vrf_module.html">aci_vrf  --  Manage VRF (private networks aka. contexts) on Cisco ACI fabrics (fv:Ctx)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aci_vrf_module.html">aci_vrf  --  Manage contexts or VRFs (fv:Ctx)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_vrf_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vrf_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_vrf_module.html#examples">Examples</a></li>
@@ -5578,6 +5579,14 @@
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_module.html#notes">Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="digital_ocean_account_facts_module.html">digital_ocean_account_facts  --  Gather facts about DigitalOcean User account</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_account_facts_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_account_facts_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_account_facts_module.html#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_account_facts_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_account_facts_module.html#return-values">Return Values</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="digital_ocean_block_storage_module.html">digital_ocean_block_storage  --  Create/destroy or attach/detach Block Storage volumes in DigitalOcean</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_block_storage_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_block_storage_module.html#options">Options</a></li>
@@ -5619,6 +5628,14 @@
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_floating_ip_facts_module.html#notes">Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="digital_ocean_region_facts_module.html">digital_ocean_region_facts  --  Gather facts about DigitalOcean regions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_region_facts_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_region_facts_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_region_facts_module.html#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_region_facts_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_region_facts_module.html#return-values">Return Values</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="digital_ocean_sshkey_module.html">digital_ocean_sshkey  --  Manage DigitalOcean SSH keys</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_sshkey_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_sshkey_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
@@ -5644,6 +5661,14 @@
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_tag_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_tag_module.html#return-values">Return Values</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_tag_module.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="digital_ocean_volume_facts_module.html">digital_ocean_volume_facts  --  Gather facts about DigitalOcean volumes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_volume_facts_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_volume_facts_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_volume_facts_module.html#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_volume_facts_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_volume_facts_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="dimensiondata_network_module.html">dimensiondata_network  --  Create, update, and delete MCP 1.0 &amp; 2.0 networks</a><ul>
@@ -8361,7 +8386,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kinesis_stream_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="known_hosts_module.html">known_hosts  --  Add or remove a host from the ``known_hosts`` file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="known_hosts_module.html">known_hosts  --  Add or remove a host from the `known_hosts` file</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="known_hosts_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="known_hosts_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="known_hosts_module.html#examples">Examples</a></li>
@@ -11483,7 +11508,7 @@
 <li class="toctree-l4"><a class="reference internal" href="pear_module.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ping_module.html">ping  --  Try to connect to host, verify a usable python and return ``pong`` on success</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ping_module.html">ping  --  Try to connect to host, verify a usable python and return `pong` on success</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ping_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ping_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ping_module.html#examples">Examples</a></li>
@@ -11841,6 +11866,14 @@
 <li class="toctree-l4"><a class="reference internal" href="purefa_pg_module.html#notes">Notes</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="purefa_pgsnap_module.html">purefa_pgsnap  --  Manage protection group snapshots on Pure Storage FlashArrays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="purefa_pgsnap_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefa_pgsnap_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefa_pgsnap_module.html#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefa_pgsnap_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefa_pgsnap_module.html#notes">Notes</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="purefa_snap_module.html">purefa_snap  --  Manage volume snapshots on Pure Storage FlashArrays</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="purefa_snap_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_snap_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
@@ -11855,6 +11888,14 @@
 <li class="toctree-l4"><a class="reference internal" href="purefa_volume_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_volume_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_volume_module.html#notes">Notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="purefb_fs_module.html">purefb_fs  --  Manage filesystemon Pure Storage FlashBlade`</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="purefb_fs_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefb_fs_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefb_fs_module.html#options">Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefb_fs_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefb_fs_module.html#notes">Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="pushbullet_module.html">pushbullet  --  Sends notifications to Pushbullet</a><ul>
@@ -12165,7 +12206,7 @@
 <li class="toctree-l4"><a class="reference internal" href="rds_subnet_group_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="redhat_subscription_module.html">redhat_subscription  --  Manage registration and subscriptions to RHSM using the ``subscription-manager`` command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="redhat_subscription_module.html">redhat_subscription  --  Manage registration and subscriptions to RHSM using the `subscription-manager` command</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="redhat_subscription_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="redhat_subscription_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="redhat_subscription_module.html#options">Options</a></li>
@@ -12231,7 +12272,7 @@
 <li class="toctree-l4"><a class="reference internal" href="rhn_channel_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="rhn_register_module.html">rhn_register  --  Manage Red Hat Network registration using the ``rhnreg_ks`` command</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="rhn_register_module.html">rhn_register  --  Manage Red Hat Network registration using the `rhnreg_ks` command</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rhn_register_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rhn_register_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rhn_register_module.html#options">Options</a></li>
@@ -13298,7 +13339,7 @@
 <li class="toctree-l4"><a class="reference internal" href="vmware_datacenter_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="vmware_datastore_facts_module.html">vmware_datastore_facts  --  Gather facts about datastores</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="vmware_datastore_facts_module.html">vmware_datastore_facts  --  Gather facts about datastores available in given vCenter</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="vmware_datastore_facts_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_datastore_facts_module.html#requirements-on-host-that-executes-module">Requirements (on host that executes module)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_datastore_facts_module.html#options">Options</a></li>
@@ -13975,7 +14016,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_acl_inheritance_module.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_audit_policy_system_module.html">win_audit_policy_system  --  Used to make changes to the system wide Audit Policy.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_audit_policy_system_module.html">win_audit_policy_system  --  Used to make changes to the system wide Audit Policy</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_audit_policy_system_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_audit_policy_system_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_audit_policy_system_module.html#examples">Examples</a></li>
@@ -14052,7 +14093,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_dns_client_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_domain_module.html">win_domain  --  Ensures the existence of a Windows domain.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_domain_module.html">win_domain  --  Ensures the existence of a Windows domain</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_module.html#examples">Examples</a></li>
@@ -14066,7 +14107,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_domain_controller_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_domain_group_module.html">win_domain_group  --  creates, modifies or removes domain groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_domain_group_module.html">win_domain_group  --  Creates, modifies or removes domain groups</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_group_module.html#examples">Examples</a></li>
@@ -14133,7 +14174,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_feature_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_file_module.html">win_file  --  Creates, touches or removes files or directories.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_file_module.html">win_file  --  Creates, touches or removes files or directories</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_file_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_module.html#examples">Examples</a></li>
@@ -14145,6 +14186,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#return-values">Return Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#notes">Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="win_find_module.html">win_find  --  Return a list of files based on specific criteria</a><ul>
@@ -14190,7 +14232,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_group_membership_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_hotfix_module.html">win_hotfix  --  install and uninstalls Windows hotfixes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_hotfix_module.html">win_hotfix  --  Install and uninstalls Windows hotfixes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#examples">Examples</a></li>
@@ -14198,7 +14240,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_virtualdirectory_module.html">win_iis_virtualdirectory  --  Configures a virtual directory in IIS.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_virtualdirectory_module.html">win_iis_virtualdirectory  --  Configures a virtual directory in IIS</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_virtualdirectory_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_virtualdirectory_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_virtualdirectory_module.html#examples">Examples</a></li>
@@ -14211,41 +14253,41 @@
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapplication_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_webapppool_module.html">win_iis_webapppool  --  configures an IIS Web Application Pool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_webapppool_module.html">win_iis_webapppool  --  Configure IIS Web Application Pools</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_webbinding_module.html">win_iis_webbinding  --  Configures a IIS Web site binding.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_webbinding_module.html">win_iis_webbinding  --  Configures a IIS Web site binding</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_website_module.html">win_iis_website  --  Configures a IIS Web site.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_website_module.html">win_iis_website  --  Configures a IIS Web site</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_website_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_website_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_website_module.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_lineinfile_module.html">win_lineinfile  --  Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_lineinfile_module.html">win_lineinfile  --  Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_mapped_drive_module.html">win_mapped_drive  --  maps a network drive for a user</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_mapped_drive_module.html">win_mapped_drive  --  Map network drives for users</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_msg_module.html">win_msg  --  Sends a message to logged in users on Windows hosts.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_msg_module.html">win_msg  --  Sends a message to logged in users on Windows hosts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_msg_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_msg_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_msg_module.html#examples">Examples</a></li>
@@ -14329,7 +14371,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_psexec_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_psmodule_module.html">win_psmodule  --  Adds or removes a Powershell Module.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_psmodule_module.html">win_psmodule  --  Adds or removes a Powershell Module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_psmodule_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_psmodule_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_psmodule_module.html#examples">Examples</a></li>
@@ -14352,7 +14394,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_reboot_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_reg_stat_module.html">win_reg_stat  --  returns information about a Windows registry key or property of a key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_reg_stat_module.html">win_reg_stat  --  Get information about Windows registry keys</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_reg_stat_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_reg_stat_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_reg_stat_module.html#examples">Examples</a></li>
@@ -14390,7 +14432,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_robocopy_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_route_module.html">win_route  --  Add or remove a static route.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_route_module.html">win_route  --  Add or remove a static route</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_route_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_route_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_route_module.html#examples">Examples</a></li>
@@ -14413,14 +14455,14 @@
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_scheduled_task_stat_module.html">win_scheduled_task_stat  --  Returns information about a Windows Scheduled Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_scheduled_task_stat_module.html">win_scheduled_task_stat  --  Get information about Windows Scheduled Tasks</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_security_policy_module.html">win_security_policy  --  changes local security policy settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_security_policy_module.html">win_security_policy  --  Change local security policy settings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_security_policy_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_security_policy_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_security_policy_module.html#examples">Examples</a></li>
@@ -14444,7 +14486,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_share_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_shell_module.html">win_shell  --  Execute shell commands on target hosts.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_shell_module.html">win_shell  --  Execute shell commands on target hosts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_shell_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_shell_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_shell_module.html#examples">Examples</a></li>
@@ -14459,7 +14501,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_shortcut_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_stat_module.html">win_stat  --  returns information about a Windows file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_stat_module.html">win_stat  --  Get information about Windows files</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#examples">Examples</a></li>
@@ -14467,7 +14509,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_tempfile_module.html">win_tempfile  --  Creates temporary files and directories.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_tempfile_module.html">win_tempfile  --  Creates temporary files and directories</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#examples">Examples</a></li>
@@ -14475,7 +14517,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_template_module.html">win_template  --  Templates a file out to a remote server.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_template_module.html">win_template  --  Templates a file out to a remote server</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_template_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_template_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_template_module.html#examples">Examples</a></li>
@@ -14560,7 +14602,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_webpicmd_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_whoami_module.html">win_whoami  --  Returns information about the current user and process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_whoami_module.html">win_whoami  --  Get information about the current user and process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_whoami_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_whoami_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_whoami_module.html#return-values">Return Values</a></li>
@@ -14997,14 +15039,17 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="list_of_cloud_modules.html#digital-ocean">Digital_Ocean</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_module.html">digital_ocean  --  Create/delete a droplet/SSH_key in DigitalOcean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_account_facts_module.html">digital_ocean_account_facts  --  Gather facts about DigitalOcean User account</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_block_storage_module.html">digital_ocean_block_storage  --  Create/destroy or attach/detach Block Storage volumes in DigitalOcean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_certificate_module.html">digital_ocean_certificate  --  Manage certificates in DigitalOcean.</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_domain_module.html">digital_ocean_domain  --  Create/delete a DNS record in DigitalOcean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_floating_ip_module.html">digital_ocean_floating_ip  --  Manage DigitalOcean Floating IPs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_floating_ip_facts_module.html">digital_ocean_floating_ip_facts  --  DigitalOcean Floating IPs facts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_region_facts_module.html">digital_ocean_region_facts  --  Gather facts about DigitalOcean regions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_sshkey_module.html">digital_ocean_sshkey  --  Manage DigitalOcean SSH keys</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_sshkey_facts_module.html">digital_ocean_sshkey_facts  --  DigitalOcean SSH keys facts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="digital_ocean_tag_module.html">digital_ocean_tag  --  Create and remove tag(s) to DigitalOcean resource.</a></li>
+<li class="toctree-l4"><a class="reference internal" href="digital_ocean_volume_facts_module.html">digital_ocean_volume_facts  --  Gather facts about DigitalOcean volumes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="list_of_cloud_modules.html#dimensiondata">Dimensiondata</a><ul>
@@ -15266,7 +15311,7 @@
 <li class="toctree-l4"><a class="reference internal" href="vmware_cfg_backup_module.html">vmware_cfg_backup  --  Backup / Restore / Reset ESXi host configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_cluster_module.html">vmware_cluster  --  Manage VMware vSphere clusters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_datacenter_module.html">vmware_datacenter  --  Manage VMware vSphere Datacenters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="vmware_datastore_facts_module.html">vmware_datastore_facts  --  Gather facts about datastores</a></li>
+<li class="toctree-l4"><a class="reference internal" href="vmware_datastore_facts_module.html">vmware_datastore_facts  --  Gather facts about datastores available in given vCenter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_dns_config_module.html">vmware_dns_config  --  Manage VMware ESXi DNS Configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_drs_rule_facts_module.html">vmware_drs_rule_facts  --  Gathers facts about DRS rule on the given cluster</a></li>
 <li class="toctree-l4"><a class="reference internal" href="vmware_dvs_host_module.html">vmware_dvs_host  --  Add or remove a host from distributed virtual switch</a></li>
@@ -16174,56 +16219,56 @@
 <li class="toctree-l3"><a class="reference internal" href="list_of_network_modules.html#aci">Aci</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="aci_aaa_user_module.html">aci_aaa_user  --  Manage AAA users (aaa:User)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_aaa_user_certificate_module.html">aci_aaa_user_certificate  --  Manage AAA user certificates (aaa:UserCert)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html">aci_access_port_to_interface_policy_leaf_profile  --  Manage Fabric interface policy leaf profile interface selectors on Cisco ACI fabrics (infra:HPortS, infra:RsAccBaseGrp, infra:PortBlk)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html">aci_aep  --  Manage attachable Access Entity Profile (AEP) on Cisco ACI fabrics (infra:AttEntityP|infra:ProvAcc)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_aep_to_domain_module.html">aci_aep_to_domain  --  Bind AEPs to Physical or Virtual Domains on Cisco ACI fabrics (infra:RsDomP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_ap_module.html">aci_ap  --  Manage top level Application Profile (AP) objects on Cisco ACI fabrics (fv:Ap)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_bd_module.html">aci_bd  --  Manage Bridge Domains (BD) on Cisco ACI Fabrics (fv:BD)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_bd_subnet_module.html">aci_bd_subnet  --  Manage Subnets on Cisco ACI fabrics (fv:Subnet)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_bd_to_l3out_module.html">aci_bd_to_l3out  --  Bind Bridge Domain to L3 Out on Cisco ACI fabrics (fv:RsBDToOut)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_config_rollback_module.html">aci_config_rollback  --  Provides rollback and rollback preview functionality for Cisco ACI fabrics (config:ImportP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_config_snapshot_module.html">aci_config_snapshot  --  Manage Config Snapshots on Cisco ACI fabrics (config:Snapshot, config:ExportP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_contract_module.html">aci_contract  --  Manage contract resources on Cisco ACI fabrics (vz:BrCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_module.html">aci_contract_subject  --  Manage initial Contract Subjects on Cisco ACI fabrics (vz:Subj)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html">aci_contract_subject_to_filter  --  Bind Contract Subjects to Filters on Cisco ACI fabrics (vz:RsSubjFiltAtt)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_domain_module.html">aci_domain  --  Manage physical, virtual, bridged, routed or FC domain profiles (*:DomP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_domain_to_encap_pool_module.html">aci_domain_to_encap_pool  --  Bind Domain to Encap Pools on Cisco ACI fabrics (infra:RsVlanNs)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html">aci_domain_to_vlan_pool  --  Bind Domain to VLAN Pools on Cisco ACI fabrics (infra:RsVlanNs)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_module.html">aci_encap_pool  --  Manage encap pools on Cisco ACI fabrics (fvns:VlanInstP, fvns:VxlanInstP, fvns:VsanInstP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html">aci_encap_pool_range  --  Manage encap ranges assigned to pools on Cisco ACI fabrics (fvns:EncapBlk, fvns:VsanEncapBlk)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_epg_module.html">aci_epg  --  Manage End Point Groups (EPG) on Cisco ACI fabrics (fv:AEPg)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html">aci_epg_monitoring_policy  --  Manage monitoring policies on Cisco ACI fabrics (mon:EPGPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_epg_to_contract_module.html">aci_epg_to_contract  --  Bind EPGs to Contracts on Cisco ACI fabrics (fv:RsCons and fv:RsProv)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_epg_to_domain_module.html">aci_epg_to_domain  --  Bind EPGs to Domains on Cisco ACI fabrics (fv:RsDomAtt)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html">aci_fabric_node  --  Add a new Fabric Node Member on Cisco ACI fabrics (fabric:NodeIdentP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_filter_module.html">aci_filter  --  Manages top level filter objects on Cisco ACI fabrics (vz:Filter)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_filter_entry_module.html">aci_filter_entry  --  Manage filter entries on Cisco ACI fabrics (vz:Entry)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_firmware_source_module.html">aci_firmware_source  --  Manage firmware image sources on Cisco ACI fabrics (firmware:OSource)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_fc_module.html">aci_interface_policy_fc  --  Manage Fibre Channel interface policies on Cisco ACI fabrics (fc:IfPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_l2_module.html">aci_interface_policy_l2  --  Manage Layer 2 interface policies on Cisco ACI fabrics (l2:IfPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html">aci_interface_policy_leaf_policy_group  --  Add Fabric Interface Policy Leaf Policy Groups on Cisco ACI fabrics.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html">aci_interface_policy_leaf_profile  --  Manage Fabric interface policy leaf profiles on Cisco ACI fabrics (infra:AccPortP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_lldp_module.html">aci_interface_policy_lldp  --  Manage LLDP interface policies on Cisco ACI fabrics (lldp:IfPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_mcp_module.html">aci_interface_policy_mcp  --  Manage MCP interface policies on Cisco ACI fabrics (mcp:IfPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_channel_module.html">aci_interface_policy_port_channel  --  Manage port channel interface policies on Cisco ACI fabrics (lacp:LagPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_security_module.html">aci_interface_policy_port_security  --  Manage port security on Cisco ACI fabrics (l2:PortSecurityPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html">aci_interface_selector_to_switch_policy_leaf_profile  --  Associates an Interface Selector Profile to a Switch Policy Leaf Profile (infra:RsAccPortP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html">aci_l3out_route_tag_policy  --  Manage route tag policies on Cisco ACI fabrics (l3ext:RouteTagPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_access_port_to_interface_policy_leaf_profile_module.html">aci_access_port_to_interface_policy_leaf_profile  --  Manage Fabric interface policy leaf profile interface selectors (infra:HPortS, infra:RsAccBaseGrp, infra:PortBlk)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_aep_module.html">aci_aep  --  Manage attachable Access Entity Profile (AEP) objects (infra:AttEntityP, infra:ProvAcc)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_aep_to_domain_module.html">aci_aep_to_domain  --  Bind AEPs to Physical or Virtual Domains (infra:RsDomP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_ap_module.html">aci_ap  --  Manage top level Application Profile (AP) objects (fv:Ap)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_bd_module.html">aci_bd  --  Manage Bridge Domains (BD) objects (fv:BD)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_bd_subnet_module.html">aci_bd_subnet  --  Manage Subnets (fv:Subnet)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_bd_to_l3out_module.html">aci_bd_to_l3out  --  Bind Bridge Domain to L3 Out (fv:RsBDToOut)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_config_rollback_module.html">aci_config_rollback  --  Provides rollback and rollback preview functionality (config:ImportP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_config_snapshot_module.html">aci_config_snapshot  --  Manage Config Snapshots (config:Snapshot, config:ExportP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_contract_module.html">aci_contract  --  Manage contract resources (vz:BrCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_module.html">aci_contract_subject  --  Manage initial Contract Subjects (vz:Subj)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_contract_subject_to_filter_module.html">aci_contract_subject_to_filter  --  Bind Contract Subjects to Filters (vz:RsSubjFiltAtt)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_domain_module.html">aci_domain  --  Manage physical, virtual, bridged, routed or FC domain profiles (phys:DomP, vmm:DomP, l2ext:DomP, l3ext:DomP, fc:DomP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_domain_to_encap_pool_module.html">aci_domain_to_encap_pool  --  Bind Domain to Encap Pools (infra:RsVlanNs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_domain_to_vlan_pool_module.html">aci_domain_to_vlan_pool  --  Bind Domain to VLAN Pools (infra:RsVlanNs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_module.html">aci_encap_pool  --  Manage encap pools (fvns:VlanInstP, fvns:VxlanInstP, fvns:VsanInstP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_encap_pool_range_module.html">aci_encap_pool_range  --  Manage encap ranges assigned to pools (fvns:EncapBlk, fvns:VsanEncapBlk)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_epg_module.html">aci_epg  --  Manage End Point Groups (EPG) objects (fv:AEPg)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_epg_monitoring_policy_module.html">aci_epg_monitoring_policy  --  Manage monitoring policies (mon:EPGPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_epg_to_contract_module.html">aci_epg_to_contract  --  Bind EPGs to Contracts (fv:RsCons, fv:RsProv)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_epg_to_domain_module.html">aci_epg_to_domain  --  Bind EPGs to Domains (fv:RsDomAtt)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_fabric_node_module.html">aci_fabric_node  --  Manage Fabric Node Members (fabric:NodeIdentP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_filter_module.html">aci_filter  --  Manages top level filter objects (vz:Filter)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_filter_entry_module.html">aci_filter_entry  --  Manage filter entries (vz:Entry)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_firmware_source_module.html">aci_firmware_source  --  Manage firmware image sources (firmware:OSource)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_fc_module.html">aci_interface_policy_fc  --  Manage Fibre Channel interface policies (fc:IfPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_l2_module.html">aci_interface_policy_l2  --  Manage Layer 2 interface policies (l2:IfPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_policy_group_module.html">aci_interface_policy_leaf_policy_group  --  Manage fabric interface policy leaf policy groups (infra:AccBndlGrp, infra:AccPortGrp)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_leaf_profile_module.html">aci_interface_policy_leaf_profile  --  Manage fabric interface policy leaf profiles (infra:AccPortP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_lldp_module.html">aci_interface_policy_lldp  --  Manage LLDP interface policies (lldp:IfPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_mcp_module.html">aci_interface_policy_mcp  --  Manage MCP interface policies (mcp:IfPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_channel_module.html">aci_interface_policy_port_channel  --  Manage port channel interface policies (lacp:LagPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_policy_port_security_module.html">aci_interface_policy_port_security  --  Manage port security (l2:PortSecurityPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_interface_selector_to_switch_policy_leaf_profile_module.html">aci_interface_selector_to_switch_policy_leaf_profile  --  Bind interface selector profiles to switch policy leaf profiles (infra:RsAccPortP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_l3out_route_tag_policy_module.html">aci_l3out_route_tag_policy  --  Manage route tag policies (l3ext:RouteTagPol)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_rest_module.html">aci_rest  --  Direct access to the Cisco APIC REST API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html">aci_static_binding_to_epg  --  Bind static paths to EPGs on Cisco ACI fabrics (fv:RsPathAtt)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_switch_leaf_selector_module.html">aci_switch_leaf_selector  --  Add a leaf Selector with Node Block Range and Policy Group to a Switch Policy Leaf Profile on Cisco ACI fabrics</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html">aci_switch_policy_leaf_profile  --  Create switch policy leaf profiles on Cisco ACI fabrics (infra:NodeP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html">aci_switch_policy_vpc_protection_group  --  Create switch policy Explicit vPC Protection Group on Cisco ACI fabrics (fabric:ExplicitGEp, fabric:NodePEp).</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_taboo_contract_module.html">aci_taboo_contract  --  Manage taboo contracts on Cisco ACI fabrics (vz:BrCP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_tenant_module.html">aci_tenant  --  Manage tenants on Cisco ACI fabrics (fv:Tenant)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html">aci_tenant_action_rule_profile  --  Manage action rule profiles on Cisco ACI fabrics (rtctrl:AttrP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html">aci_tenant_ep_retention_policy  --  Manage End Point (EP) retention protocol policies on Cisco ACI fabrics (fv:EpRetPol)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_dst_group_module.html">aci_tenant_span_dst_group  --  Manage SPAN destination groups on Cisco ACI fabrics (span:DestGrp)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_module.html">aci_tenant_span_src_group  --  Manage SPAN source groups on Cisco ACI fabrics (span:SrcGrp)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html">aci_tenant_span_src_group_to_dst_group  --  Manage SPAN source group to destination group bindings on Cisco ACI fabrics (span:SpanLbl)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_module.html">aci_vlan_pool  --  Manage VLAN pools on Cisco ACI fabrics (fvns:VlanInstP)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html">aci_vlan_pool_encap_block  --  Manage encap blocks assigned to VLAN pools on Cisco ACI fabrics (fvns:EncapBlk)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="aci_vrf_module.html">aci_vrf  --  Manage VRF (private networks aka. contexts) on Cisco ACI fabrics (fv:Ctx)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_static_binding_to_epg_module.html">aci_static_binding_to_epg  --  Bind static paths to EPGs (fv:RsPathAtt)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_switch_leaf_selector_module.html">aci_switch_leaf_selector  --  Bind leaf selectors to switch policy leaf profiles (infra:LeafS, infra:NodeBlk, infra:RsAccNodePGrep)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_leaf_profile_module.html">aci_switch_policy_leaf_profile  --  Manage switch policy leaf profiles (infra:NodeP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_switch_policy_vpc_protection_group_module.html">aci_switch_policy_vpc_protection_group  --  Manage switch policy explicit vPC protection groups (fabric:ExplicitGEp, fabric:NodePEp).</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_taboo_contract_module.html">aci_taboo_contract  --  Manage taboo contracts (vz:BrCP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_tenant_module.html">aci_tenant  --  Manage tenants (fv:Tenant)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_tenant_action_rule_profile_module.html">aci_tenant_action_rule_profile  --  Manage action rule profiles (rtctrl:AttrP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_tenant_ep_retention_policy_module.html">aci_tenant_ep_retention_policy  --  Manage End Point (EP) retention protocol policies (fv:EpRetPol)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_dst_group_module.html">aci_tenant_span_dst_group  --  Manage SPAN destination groups (span:DestGrp)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_module.html">aci_tenant_span_src_group  --  Manage SPAN source groups (span:SrcGrp)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_tenant_span_src_group_to_dst_group_module.html">aci_tenant_span_src_group_to_dst_group  --  Bind SPAN source groups to destination groups (span:SpanLbl)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_module.html">aci_vlan_pool  --  Manage VLAN pools (fvns:VlanInstP)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_vlan_pool_encap_block_module.html">aci_vlan_pool_encap_block  --  Manage encap blocks assigned to VLAN pools (fvns:EncapBlk)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="aci_vrf_module.html">aci_vrf  --  Manage contexts or VRFs (fv:Ctx)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="list_of_network_modules.html#aireos">Aireos</a><ul>
@@ -17117,9 +17162,9 @@
 <li class="toctree-l4"><a class="reference internal" href="portage_module.html">portage  --  Package manager for Gentoo</a></li>
 <li class="toctree-l4"><a class="reference internal" href="portinstall_module.html">portinstall  --  Installing packages from FreeBSD's ports system</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pulp_repo_module.html">pulp_repo  --  Add or remove Pulp repos from a remote host.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="redhat_subscription_module.html">redhat_subscription  --  Manage registration and subscriptions to RHSM using the ``subscription-manager`` command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="redhat_subscription_module.html">redhat_subscription  --  Manage registration and subscriptions to RHSM using the `subscription-manager` command</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rhn_channel_module.html">rhn_channel  --  Adds or removes Red Hat software channels</a></li>
-<li class="toctree-l4"><a class="reference internal" href="rhn_register_module.html">rhn_register  --  Manage Red Hat Network registration using the ``rhnreg_ks`` command</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rhn_register_module.html">rhn_register  --  Manage Red Hat Network registration using the `rhnreg_ks` command</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rhsm_repository_module.html">rhsm_repository  --  Manage RHSM repositories using the subscription-manager command</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rpm_key_module.html">rpm_key  --  Adds or removes a gpg key from the rpm db</a></li>
 <li class="toctree-l4"><a class="reference internal" href="slackpkg_module.html">slackpkg  --  Package manager for Slackware &gt;= 12.2</a></li>
@@ -17354,8 +17399,10 @@
 <li class="toctree-l4"><a class="reference internal" href="purefa_hg_module.html">purefa_hg  --  Manage hostgroups on Pure Storage FlashArrays</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_host_module.html">purefa_host  --  Manage hosts on Pure Storage FlashArrays</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_pg_module.html">purefa_pg  --  Manage protection groups on Pure Storage FlashArrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefa_pgsnap_module.html">purefa_pgsnap  --  Manage protection group snapshots on Pure Storage FlashArrays</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_snap_module.html">purefa_snap  --  Manage volume snapshots on Pure Storage FlashArrays</a></li>
 <li class="toctree-l4"><a class="reference internal" href="purefa_volume_module.html">purefa_volume  --  Manage volumes on Pure Storage FlashArrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="purefb_fs_module.html">purefb_fs  --  Manage filesystemon Pure Storage FlashBlade`</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="list_of_storage_modules.html#zfs">Zfs</a><ul>
@@ -17546,7 +17593,7 @@
 <li class="toctree-l4"><a class="reference internal" href="kernel_blacklist_module.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="known_hosts_module.html">known_hosts  --  Add or remove a host from the ``known_hosts`` file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="known_hosts_module.html">known_hosts  --  Add or remove a host from the `known_hosts` file</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="known_hosts_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="known_hosts_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="known_hosts_module.html#examples">Examples</a></li>
@@ -17659,7 +17706,7 @@
 <li class="toctree-l4"><a class="reference internal" href="parted_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="ping_module.html">ping  --  Try to connect to host, verify a usable python and return ``pong`` on success</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ping_module.html">ping  --  Try to connect to host, verify a usable python and return `pong` on success</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="ping_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ping_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ping_module.html#examples">Examples</a></li>
@@ -18011,7 +18058,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_acl_inheritance_module.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_audit_policy_system_module.html">win_audit_policy_system  --  Used to make changes to the system wide Audit Policy.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_audit_policy_system_module.html">win_audit_policy_system  --  Used to make changes to the system wide Audit Policy</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_audit_policy_system_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_audit_policy_system_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_audit_policy_system_module.html#examples">Examples</a></li>
@@ -18088,7 +18135,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_dns_client_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_domain_module.html">win_domain  --  Ensures the existence of a Windows domain.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_domain_module.html">win_domain  --  Ensures the existence of a Windows domain</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_module.html#examples">Examples</a></li>
@@ -18102,7 +18149,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_domain_controller_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_domain_group_module.html">win_domain_group  --  creates, modifies or removes domain groups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_domain_group_module.html">win_domain_group  --  Creates, modifies or removes domain groups</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_group_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_group_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_domain_group_module.html#examples">Examples</a></li>
@@ -18169,7 +18216,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_feature_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_file_module.html">win_file  --  Creates, touches or removes files or directories.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_file_module.html">win_file  --  Creates, touches or removes files or directories</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_file_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_module.html#examples">Examples</a></li>
@@ -18181,6 +18228,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#return-values">Return Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="win_file_version_module.html#notes">Notes</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="win_find_module.html">win_find  --  Return a list of files based on specific criteria</a><ul>
@@ -18226,7 +18274,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_group_membership_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_hotfix_module.html">win_hotfix  --  install and uninstalls Windows hotfixes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_hotfix_module.html">win_hotfix  --  Install and uninstalls Windows hotfixes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#examples">Examples</a></li>
@@ -18234,7 +18282,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_hotfix_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_virtualdirectory_module.html">win_iis_virtualdirectory  --  Configures a virtual directory in IIS.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_virtualdirectory_module.html">win_iis_virtualdirectory  --  Configures a virtual directory in IIS</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_virtualdirectory_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_virtualdirectory_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_virtualdirectory_module.html#examples">Examples</a></li>
@@ -18247,41 +18295,41 @@
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapplication_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_webapppool_module.html">win_iis_webapppool  --  configures an IIS Web Application Pool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_webapppool_module.html">win_iis_webapppool  --  Configure IIS Web Application Pools</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webapppool_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_webbinding_module.html">win_iis_webbinding  --  Configures a IIS Web site binding.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_webbinding_module.html">win_iis_webbinding  --  Configures a IIS Web site binding</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_webbinding_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_iis_website_module.html">win_iis_website  --  Configures a IIS Web site.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_iis_website_module.html">win_iis_website  --  Configures a IIS Web site</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_website_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_website_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_iis_website_module.html#examples">Examples</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_lineinfile_module.html">win_lineinfile  --  Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_lineinfile_module.html">win_lineinfile  --  Ensure a particular line is in a file, or replace an existing line using a back-referenced regular expression</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_lineinfile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_mapped_drive_module.html">win_mapped_drive  --  maps a network drive for a user</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_mapped_drive_module.html">win_mapped_drive  --  Map network drives for users</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_mapped_drive_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_msg_module.html">win_msg  --  Sends a message to logged in users on Windows hosts.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_msg_module.html">win_msg  --  Sends a message to logged in users on Windows hosts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_msg_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_msg_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_msg_module.html#examples">Examples</a></li>
@@ -18365,7 +18413,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_psexec_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_psmodule_module.html">win_psmodule  --  Adds or removes a Powershell Module.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_psmodule_module.html">win_psmodule  --  Adds or removes a Powershell Module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_psmodule_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_psmodule_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_psmodule_module.html#examples">Examples</a></li>
@@ -18388,7 +18436,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_reboot_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_reg_stat_module.html">win_reg_stat  --  returns information about a Windows registry key or property of a key</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_reg_stat_module.html">win_reg_stat  --  Get information about Windows registry keys</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_reg_stat_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_reg_stat_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_reg_stat_module.html#examples">Examples</a></li>
@@ -18426,7 +18474,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_robocopy_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_route_module.html">win_route  --  Add or remove a static route.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_route_module.html">win_route  --  Add or remove a static route</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_route_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_route_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_route_module.html#examples">Examples</a></li>
@@ -18449,14 +18497,14 @@
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_scheduled_task_stat_module.html">win_scheduled_task_stat  --  Returns information about a Windows Scheduled Task</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_scheduled_task_stat_module.html">win_scheduled_task_stat  --  Get information about Windows Scheduled Tasks</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_scheduled_task_stat_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_security_policy_module.html">win_security_policy  --  changes local security policy settings</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_security_policy_module.html">win_security_policy  --  Change local security policy settings</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_security_policy_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_security_policy_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_security_policy_module.html#examples">Examples</a></li>
@@ -18480,7 +18528,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_share_module.html#return-values">Return Values</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_shell_module.html">win_shell  --  Execute shell commands on target hosts.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_shell_module.html">win_shell  --  Execute shell commands on target hosts</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_shell_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_shell_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_shell_module.html#examples">Examples</a></li>
@@ -18495,7 +18543,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_shortcut_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_stat_module.html">win_stat  --  returns information about a Windows file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_stat_module.html">win_stat  --  Get information about Windows files</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#examples">Examples</a></li>
@@ -18503,7 +18551,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_stat_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_tempfile_module.html">win_tempfile  --  Creates temporary files and directories.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_tempfile_module.html">win_tempfile  --  Creates temporary files and directories</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#examples">Examples</a></li>
@@ -18511,7 +18559,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_tempfile_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_template_module.html">win_template  --  Templates a file out to a remote server.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_template_module.html">win_template  --  Templates a file out to a remote server</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_template_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_template_module.html#options">Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_template_module.html#examples">Examples</a></li>
@@ -18596,7 +18644,7 @@
 <li class="toctree-l4"><a class="reference internal" href="win_webpicmd_module.html#notes">Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="win_whoami_module.html">win_whoami  --  Returns information about the current user and process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="win_whoami_module.html">win_whoami  --  Get information about the current user and process</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="win_whoami_module.html#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_whoami_module.html#examples">Examples</a></li>
 <li class="toctree-l4"><a class="reference internal" href="win_whoami_module.html#return-values">Return Values</a></li>
@@ -19064,6 +19112,10 @@
   <li><a href="../index.html">Docs</a> &raquo;</li>
   <li><a href="">onyx_pfc_interface - Manage priority flow control on ONYX network devices</a></li>
   
+    <li class="wy-breadcrumbs-aside">
+      <a href="https://github.com/ansible/ansible/edit/devel/lib/ansible/modules/network/onyx/onyx_pfc_interface.py" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  
 </ul>
 <hr/>
 
@@ -19097,21 +19149,21 @@
 <h2><a class="toc-backref" href="#id2">Options</a><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
 <table  border=0 cellpadding=0 class="documentation-table">
             <tr>
-        <th class="head"><div class="cell-border">parameter</div></th>
-        <th class="head"><div class="cell-border">required</div></th>
-        <th class="head"><div class="cell-border">default</div></th>
-        <th class="head"><div class="cell-border">choices</div></th>
-                    <th class="head"><div class="cell-border">comments</div></th>
+        <th class="head"><div class="cell-border">Parameter</div></th>
+        <th class="head"><div class="cell-border">Required?</div></th>
+        <th class="head"><div class="cell-border">Default</div></th>
+        <th class="head"><div class="cell-border">Choices</div></th>
+                    <th class="head"><div class="cell-border">Comments</div></th>
     </tr>
                 <tr class="return-value-column">
                             <td>
                 <div class="outer-elbow-container">
                                             <div class="elbow-key">
-                        aggregate<br/><div style="font-size: small;"></div>
+                        <b>aggregate</b><br/><div style="font-size: small;"></div>
                     </div>
                 <div class="outer-elbow-container">
             </td>
-                            <td><div class="cell-border">no</div></td>
+                            <td><div class="cell-border"></div></td>
                             <td><div class="cell-border"></div></td>
                             <td>
                 <div class="cell-border">
@@ -19127,11 +19179,11 @@
                             <td>
                 <div class="outer-elbow-container">
                                             <div class="elbow-key">
-                        name<br/><div style="font-size: small;"></div>
+                        <b>name</b><br/><div style="font-size: small;"></div>
                     </div>
                 <div class="outer-elbow-container">
             </td>
-                            <td><div class="cell-border">no</div></td>
+                            <td><div class="cell-border"></div></td>
                             <td><div class="cell-border"></div></td>
                             <td>
                 <div class="cell-border">
@@ -19147,11 +19199,11 @@
                             <td>
                 <div class="outer-elbow-container">
                                             <div class="elbow-key">
-                        purge<br/><div style="font-size: small;"></div>
+                        <b>purge</b><br/><div style="font-size: small;"></div>
                     </div>
                 <div class="outer-elbow-container">
             </td>
-                            <td><div class="cell-border">no</div></td>
+                            <td><div class="cell-border"></div></td>
                             <td><div class="cell-border"></div></td>
                             <td>
                 <div class="cell-border">
@@ -19171,11 +19223,11 @@
                             <td>
                 <div class="outer-elbow-container">
                                             <div class="elbow-key">
-                        state<br/><div style="font-size: small;"></div>
+                        <b>state</b><br/><div style="font-size: small;"></div>
                     </div>
                 <div class="outer-elbow-container">
             </td>
-                            <td><div class="cell-border">no</div></td>
+                            <td><div class="cell-border"></div></td>
                             <td><div class="cell-border">enabled</div></td>
                             <td>
                 <div class="cell-border">
@@ -19204,29 +19256,29 @@
 </div>
 <div class="section" id="return-values">
 <h2><a class="toc-backref" href="#id4">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h2>
-<p>Common return values are documented <a class="reference internal" href="../reference_appendices/common_return_values.html#common-return-values"><span class="std std-ref">here</span></a>, the following are the fields unique to this {{plugin_type}}:</p>
+<p>Common return values are documented <a class="reference internal" href="../reference_appendices/common_return_values.html#common-return-values"><span class="std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table border=0 cellpadding=0 class="documentation-table">
     <tr>
-        <th class="head"><div class="cell-border">name</div></th>
-        <th class="head"><div class="cell-border">description</div></th>
-        <th class="head"><div class="cell-border">returned</div></th>
-        <th class="head"><div class="cell-border">type</div></th>
-        <th class="head"><div class="cell-border">sample</div></th>
+        <th class="head"><div class="cell-border">Name</div></th>
+        <th class="head"><div class="cell-border">Description</div></th>
+        <th class="head"><div class="cell-border">Returned</div></th>
+        <th class="head"><div class="cell-border">Type</div></th>
+        <th class="head"><div class="cell-border">Sample</div></th>
     </tr>
                 <tr class="return-value-column">
             <td>
                 <div class="outer-elbow-container">
                                             <div class="elbow-key">
-                        commands
+                        <b>commands</b>
                     </div>
                 </div>
             </td>
             <td>
                                         <div class="cell-border">The list of configuration mode commands to send to the device.</div>
                                 </td>
-            <td align=center><div class="cell-border">always</div></td>
-            <td align=center><div class="cell-border">list</div></td>
-            <td align=center><div class="cell-border">['interface ethernet 1/17 dcb priority-flow-control mode on']</div></td>
+            <td><div class="cell-border">always</div></td>
+            <td><div class="cell-border">list</div></td>
+            <td><div class="cell-border">['interface ethernet 1/17 dcb priority-flow-control mode on']</div></td>
         </tr>
                     </table>
 </br></br></div>
@@ -19240,11 +19292,9 @@
 </div>
 <div class="section" id="author">
 <h3><a class="toc-backref" href="#id6">Author</a><a class="headerlink" href="#author" title="Permalink to this headline">¶</a></h3>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Samer Deeb (&#64;samerd)</li>
 </ul>
-</div></blockquote>
 </div>
 <div class="section" id="status">
 <h3><a class="toc-backref" href="#id7">Status</a><a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
@@ -19282,12 +19332,12 @@
 </script>
 
   <p>
-  Copyright © 2017 Red Hat, Inc.
+  Copyright © 2018 Red Hat, Inc.
   <br>
-    Last updated on Feb 20, 2018.
+    Last updated on Feb 27, 2018.
   </p>
 <p>
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</a> using <a href="http://sphinx-doc.org/">Sphinx</a> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>. Module documentation is not edited directly, but is generated from the source code for the modules.  To submit an update to module docs, edit the 'DOCUMENTATION' metadata in the <a href="https://github.com/ansible/ansible/tree/devel/lib/ansible/modules">modules directory</a> of the <a href="https://github.com/ansible/ansible/">core source code repository</a>. 
+Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</a> using <a href="http://sphinx-doc.org/">Sphinx</a> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>.
 </p>
 </footer>
         </div>

@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="An Introduction to Network Automation with Ansible" href="getting_started/index.html" />
-    <link rel="prev" title="Continuous Delivery and Rolling Upgrades" href="../scenario_guides/guide_rolling_upgrade.html" /> 
+    <link rel="prev" title="Getting Started with VMware" href="../scenario_guides/guide_vmware.html" /> 
 
   <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 
@@ -276,12 +276,13 @@
 <li class="toctree-l3"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#plugins">Plugins</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#inventory">Inventory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#shell">Shell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#filter">Filter</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#porting-custom-scripts">Porting custom scripts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#networking">Networking</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#change-in-deprecation-notice-of-top-level-connection-arguments">Change in deprecation notice of top-level connection arguments</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#notice-when-using-provider-dictionary-with-new-persistent-connection-types">Notice when using provider dictionary with new persistent connection types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#network">Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#top-level-connection-arguments-will-be-removed-in-2-9">Top-level connection arguments will be removed in 2.9</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#adding-persistent-connection-types-network-cli-and-netconf">Adding persistent connection types <code class="docutils literal"><span class="pre">network_cli</span></code> and <code class="docutils literal"><span class="pre">netconf</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="../porting_guides/porting_guide_2.5.html#developers-shared-module-utilities-moved">Developers: Shared Module Utilities Moved</a></li>
 </ul>
 </li>
@@ -542,10 +543,12 @@
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_environment.html#working-with-language-specific-version-managers">Working With Language-Specific Version Managers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_error_handling.html">Error Handling In Playbooks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_advanced_syntax.html">Advanced Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugins/plugins.html">Working With Plugins</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_prompts.html">Prompts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_tags.html">Tags</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_vault.html">Using Vault in playbooks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_startnstep.html">Start and Step</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_appendices/playbooks_keywords.html">Playbook Keywords</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/playbooks_lookups.html">Lookups</a></li>
 </ul>
 </li>
@@ -571,7 +574,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../user_guide/become.html">Understanding Privilege Escalation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../user_guide/become.html#become">Become</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../user_guide/become.html#id1">Become</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../user_guide/become.html#directives">Directives</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#connection-variables">Connection variables</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#command-line-options">Command line options</a></li>
@@ -590,7 +593,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#local-service-accounts">Local Service Accounts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#accounts-without-a-password">Accounts without a Password</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#become-flags">Become Flags</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#id1">Limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../user_guide/become.html#id2">Limitations</a></li>
 </ul>
 </li>
 </ul>
@@ -628,6 +631,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../modules/modules_by_category.html">Module Index</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="../modules/list_of_all_modules.html">All modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/list_of_network_modules.html">Network modules</a></li>
 </ul>
 </li>
 </ul>
@@ -915,11 +919,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/developing_api.html">Python API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../dev_guide/developing_api.html#python-api-2-0">Python API 2.0</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../dev_guide/developing_api.html#python-api-pre-2-0">Python API pre 2.0</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../dev_guide/developing_api.html#detailed-api-example">Detailed API Example</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="../dev_guide/developing_api.html#python-api-example">Python API example</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/developing_rebasing.html">Rebasing a Pull Request</a><ul>
@@ -949,6 +949,28 @@
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/repomerge.html#background">Background</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/repomerge.html#why-are-we-doing-this-again">Why Are We Doing This (Again…)?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../dev_guide/repomerge.html#metadata-support-ownership-and-module-status">Metadata - Support/Ownership and Module Status</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html">Release and maintenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#release-cycle">Release cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#release-status">Release status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#development-and-stable-version-maintenance-workflow">Development and stable version maintenance workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#release-candidates">Release candidates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#feature-freeze">Feature freeze</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#deprecation-cycle">Deprecation Cycle</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../community/committer_guidelines.html">Committers Guidelines (for people with commit rights to Ansible on GitHub)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../community/committer_guidelines.html#features-high-level-design-and-roadmap">Features, High Level Design, and Roadmap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/committer_guidelines.html#our-workflow-on-github">Our Workflow on GitHub</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../community/committer_guidelines.html#addendum-to-workflow-for-committers">Addendum to workflow for Committers:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../community/committer_guidelines.html#roles-on-core">Roles on Core</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/committer_guidelines.html#general-rules">General Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../community/committer_guidelines.html#people">People</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../dev_guide/style_guide/index.html">Ansible Style Guide</a><ul>
@@ -1072,6 +1094,49 @@
 </ul>
 <p class="caption"><span class="caption-text">Scenario Guides</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_aci.html">Cisco ACI Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#what-is-cisco-aci">What is Cisco ACI ?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#application-centric-infrastructure-aci">Application Centric Infrastructure (ACI)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#application-policy-infrastructure-controller-apic">Application Policy Infrastructure Controller (APIC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#aci-fabric">ACI Fabric</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#more-information">More information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-modules">Using the ACI modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#querying-aci-configuration">Querying ACI configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#common-parameters">Common parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#proxy-support">Proxy support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#return-values">Return values</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#id1">More information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#aci-authentication">ACI authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#password-based-authentication">Password-based authentication</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#signature-based-authentication-using-certificates">Signature-based authentication using certificates</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#generate-certificate-and-private-key">Generate certificate and private key</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#configure-your-local-user">Configure your local user</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#use-signature-based-authentication-with-ansible">Use signature-based authentication with Ansible</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#id2">More information</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-aci-rest-with-ansible">Using ACI REST with Ansible</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#built-in-idempotency">Built-in idempotency</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-rest-module">Using the aci_rest module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#id3">More information</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#operational-examples">Operational examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#waiting-for-all-controllers-to-be-ready">Waiting for all controllers to be ready</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#waiting-for-cluster-to-be-fully-fit">Waiting for cluster to be fully-fit</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#apic-error-messages">APIC error messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#known-issues">Known issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#aci-ansible-community">ACI Ansible community</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_aws.html">Amazon Web Services Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aws.html#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aws.html#authentication">Authentication</a></li>
@@ -1112,6 +1177,64 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html">CloudStack Cloud Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#limitations-and-known-issues">Limitations and Known Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#credentials-file">Credentials File</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#regions">Regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#environment-variables">Environment Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#use-cases">Use Cases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#use-case-provisioning-in-a-advanced-networking-cloudstack-setup">Use Case: Provisioning in a Advanced Networking CloudStack setup</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#use-case-provisioning-on-a-basic-networking-cloudstack-setup">Use Case: Provisioning on a Basic Networking CloudStack setup</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_docker.html">Getting Started with Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_docker.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_docker.html#connecting-to-the-docker-api">Connecting to the Docker API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#parameters">Parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#environment-variables">Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_docker.html#dynamic-inventory-script">Dynamic Inventory Script</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#groups">Groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#configuration">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_docker.html#id2">Environment Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_docker.html#configuration-file">Configuration File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_gce.html">Google Cloud Platform Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#credentials">Credentials</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#calling-modules-by-passing-credentials">Calling Modules By Passing Credentials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#configuring-modules-with-secrets-py">Configuring Modules with secrets.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#configuring-modules-with-environment-variables">Configuring Modules with Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#gce-dynamic-inventory">GCE Dynamic Inventory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#use-cases">Use Cases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#create-an-instance">Create an instance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#configuring-instances-in-a-group">Configuring instances in a group</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_packet.html">Using Ansible with the Packet host</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#device-creation">Device Creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#updating-devices">Updating Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#more-complex-playbooks">More Complex Playbooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#dynamic-inventory-script">Dynamic Inventory Script</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_rax.html">Rackspace Cloud Guide</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rax.html#introduction">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rax.html#credentials-file">Credentials File</a><ul>
@@ -1142,76 +1265,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_gce.html">Google Cloud Platform Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#credentials">Credentials</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#calling-modules-by-passing-credentials">Calling Modules By Passing Credentials</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#configuring-modules-with-secrets-py">Configuring Modules with secrets.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#configuring-modules-with-environment-variables">Configuring Modules with Environment Variables</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#gce-dynamic-inventory">GCE Dynamic Inventory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_gce.html#use-cases">Use Cases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#create-an-instance">Create an instance</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_gce.html#configuring-instances-in-a-group">Configuring instances in a group</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html">CloudStack Cloud Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#limitations-and-known-issues">Limitations and Known Issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#credentials-file">Credentials File</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#regions">Regions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#environment-variables">Environment Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#use-cases">Use Cases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#use-case-provisioning-in-a-advanced-networking-cloudstack-setup">Use Case: Provisioning in a Advanced Networking CloudStack setup</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_cloudstack.html#use-case-provisioning-on-a-basic-networking-cloudstack-setup">Use Case: Provisioning on a Basic Networking CloudStack setup</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_aci.html">Cisco ACI Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#what-is-cisco-aci">What is Cisco ACI ?</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#application-centric-infrastructure-aci">Application Centric Infrastructure (ACI)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#application-policy-infrastructure-controller-apic">Application Policy Infrastructure Controller (APIC)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#aci-fabric">ACI Fabric</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#more-information">More information</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-modules">Using the ACI modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#common-parameters">Common parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#proxy-support">Proxy support</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#return-values">Return values</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#id1">More information</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#aci-authentication">ACI authentication</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#password-based-authentication">Password-based authentication</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#signature-based-authentication-using-certificates">Signature-based authentication using certificates</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#generate-certificate-and-private-key">Generate certificate and private key</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#configure-your-local-user">Configure your local user</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#use-signature-based-authentication-with-ansible">Use signature-based authentication with Ansible</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_aci.html#id2">More information</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-aci-rest-with-ansible">Using ACI REST with Ansible</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#built-in-idempotency">Built-in idempotency</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#using-the-aci-rest-module">Using the aci_rest module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#id3">More information</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#operational-examples">Operational examples</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#waiting-for-all-controllers-to-be-ready">Waiting for all controllers to be ready</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_aci.html#waiting-for-cluster-to-be-fully-fit">Waiting for cluster to be fully-fit</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#apic-error-messages">APIC error messages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#known-issues">Known issues</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_aci.html#aci-ansible-community">ACI Ansible community</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#site-deployment">Site Deployment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#reusable-content-roles">Reusable Content: Roles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#configuration-group-variables">Configuration: Group Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#the-rolling-upgrade">The Rolling Upgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#managing-other-load-balancers">Managing Other Load Balancers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#continuous-delivery-end-to-end">Continuous Delivery End-To-End</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_vagrant.html">Using Vagrant and Ansible</a><ul>
@@ -1221,42 +1282,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_vagrant.html#advanced-usages">Advanced Usages</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_docker.html">Getting Started with Docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_docker.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_docker.html#connecting-to-the-docker-api">Connecting to the Docker API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#parameters">Parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#environment-variables">Environment Variables</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_docker.html#dynamic-inventory-script">Dynamic Inventory Script</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#groups">Groups</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../scenario_guides/guide_docker.html#configuration">Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_docker.html#id2">Environment Variables</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../scenario_guides/guide_docker.html#configuration-file">Configuration File</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_packet.html">Using Ansible with the Packet host</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#device-creation">Device Creation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#updating-devices">Updating Devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#more-complex-playbooks">More Complex Playbooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_packet.html#dynamic-inventory-script">Dynamic Inventory Script</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html">Continuous Delivery and Rolling Upgrades</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#site-deployment">Site Deployment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#reusable-content-roles">Reusable Content: Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#configuration-group-variables">Configuration: Group Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#the-rolling-upgrade">The Rolling Upgrade</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#managing-other-load-balancers">Managing Other Load Balancers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_rolling_upgrade.html#continuous-delivery-end-to-end">Continuous Delivery End-To-End</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scenario_guides/guide_vmware.html">Getting Started with VMware</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_vmware.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_vmware.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_vmware.html#vmware-guest-module">vmware_guest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario_guides/guide_vmware.html#debugging">Debugging</a></li>
 </ul>
 </li>
 </ul>
@@ -1337,7 +1367,7 @@
 <li class="toctree-l3"><a class="reference internal" href="user_guide/platform_index.html">Platform Options</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="user_guide/platform_eos.html">EOS Platform Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="user_guide/platform_ios.html">IOS Platform Options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user_guide/platform_junos.html">JUNOS Platform Options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_guide/platform_junos.html">Junos OS Platform Options</a></li>
 <li class="toctree-l4"><a class="reference internal" href="user_guide/platform_nxos.html">NXOS Platform Options</a></li>
 </ul>
 </li>
@@ -1349,7 +1379,49 @@
 <p class="caption"><span class="caption-text">Reference &amp; Appendices</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../modules/modules_by_category.html">Module Index</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../modules/list_of_all_modules.html">All modules</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="../modules/list_of_all_modules.html">All modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/eos_command_module.html">eos_command  --  Run arbitrary commands on an Arista EOS device</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html#notes">Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html#return-values">Return Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html#status">Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/ios_command_module.html">ios_command  --  Run commands on remote devices running Cisco IOS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html#notes">Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html#return-values">Return Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html#status">Status</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/vyos_config_module.html">vyos_config  --  Manage VyOS configuration on remote device</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html#synopsis">Synopsis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html#notes">Notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html#return-values">Return Values</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html#status">Status</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../modules/list_of_network_modules.html">Network modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../modules/list_of_network_modules.html#eos">Eos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/eos_command_module.html">eos_command  --  Run arbitrary commands on an Arista EOS device</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/list_of_network_modules.html#ios">Ios</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/ios_command_module.html">ios_command  --  Run commands on remote devices running Cisco IOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../modules/list_of_network_modules.html#vyos">Vyos</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../modules/vyos_config_module.html">vyos_config  --  Manage VyOS configuration on remote device</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1478,6 +1550,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-callable-whitelist">DEFAULT_CALLABLE_WHITELIST</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-callback-plugin-path">DEFAULT_CALLBACK_PLUGIN_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-callback-whitelist">DEFAULT_CALLBACK_WHITELIST</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-cliconf-plugin-path">DEFAULT_CLICONF_PLUGIN_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-connection-plugin-path">DEFAULT_CONNECTION_PLUGIN_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-debug">DEFAULT_DEBUG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-executable">DEFAULT_EXECUTABLE</a></li>
@@ -1509,6 +1582,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-module-path">DEFAULT_MODULE_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-module-set-locale">DEFAULT_MODULE_SET_LOCALE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-module-utils-path">DEFAULT_MODULE_UTILS_PATH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-netconf-plugin-path">DEFAULT_NETCONF_PLUGIN_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-no-log">DEFAULT_NO_LOG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-no-target-syslog">DEFAULT_NO_TARGET_SYSLOG</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-null-representation">DEFAULT_NULL_REPRESENTATION</a></li>
@@ -1536,6 +1610,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-sudo-user">DEFAULT_SUDO_USER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-syslog-facility">DEFAULT_SYSLOG_FACILITY</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-task-includes-static">DEFAULT_TASK_INCLUDES_STATIC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-terminal-plugin-path">DEFAULT_TERMINAL_PLUGIN_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-test-plugin-path">DEFAULT_TEST_PLUGIN_PATH</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-timeout">DEFAULT_TIMEOUT</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/config.html#default-transport">DEFAULT_TRANSPORT</a></li>
@@ -1611,6 +1686,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#feature-freeze">Feature freeze</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../reference_appendices/release_and_maintenance.html#deprecation-cycle">Deprecation Cycle</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_appendices/test_strategies.html">Testing Strategies</a><ul>
@@ -1622,6 +1698,47 @@
 <li class="toctree-l2"><a class="reference internal" href="../reference_appendices/test_strategies.html#integrating-testing-with-rolling-updates">Integrating Testing With Rolling Updates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference_appendices/test_strategies.html#achieving-continuous-deployment">Achieving Continuous Deployment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference_appendices/test_strategies.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../dev_guide/testing/sanity/index.html">Sanity Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/ansible-doc.html">Sanity Tests » ansible-doc</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/azure-requirements.html">Sanity Tests » azure-requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/boilerplate.html">Sanity Tests » boilerplate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/compile.html">Sanity Tests » compile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/configure-remoting-ps1.html">Sanity Tests » configure-remoting-ps1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/empty-init.html">Sanity Tests » empty-init</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/import.html">Sanity Tests » import</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/integration-aliases.html">Sanity Tests » integration-aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/line-endings.html">Sanity Tests » line-endings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-assert.html">Sanity Tests » no-assert</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-basestring.html">Sanity Tests » no-basestring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-dict-iteritems.html">Sanity Tests » no-dict-iteritems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-dict-iterkeys.html">Sanity Tests » no-dict-iterkeys</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-dict-itervalues.html">Sanity Tests » no-dict-itervalues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-get-exception.html">Sanity Tests » no-get-exception</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-illegal-filenames.html">Sanity Tests » no-illegal-filenames</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../dev_guide/testing/sanity/no-illegal-filenames.html#illegal-characters">Illegal Characters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dev_guide/testing/sanity/no-illegal-filenames.html#illegal-names">Illegal Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-smart-quotes.html">Sanity Tests » no-smart-quotes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-tests-as-filters.html">Sanity Tests » no-tests-as-filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-underscore-variable.html">Sanity Tests » no-underscore-variable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/no-unicode-literals.html">Sanity Tests » no-unicode_literals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/pep8.html">Sanity Tests » pep8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/pslint.html">Sanity Tests » pslint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/pylint.html">Sanity Tests » pylint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/replace-urlopen.html">Sanity Tests » replace-urlopen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/required-and-default-attributes.html">Sanity Tests » required-and-default-attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/rstcheck.html">Sanity Tests » rstcheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/sanity-docs.html">Sanity Tests » sanity-docs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/shebang.html">Sanity Tests » shebang</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/shellcheck.html">Sanity Tests » shellcheck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/test-constraints.html">Sanity Tests » test-constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/use-argspec-type-path.html">Sanity Tests » use-argspec-type-path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/use-compat-six.html">Sanity Tests » use-compat-six</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/validate-modules.html">Sanity Tests » validate-modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dev_guide/testing/sanity/yamllint.html">Sanity Tests » yamllint</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../reference_appendices/faq.html">Frequently Asked Questions</a><ul>
@@ -1727,15 +1844,11 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html">Ansible 2.5</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#engine-improvements">Engine improvements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#ansible-content-management">Ansible Content Management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#ansible-config">Ansible-Config</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#inventory">Inventory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#facts">Facts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#pluginloader">PluginLoader</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#static-loop-keyword">Static Loop Keyword</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#vault">Vault</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#role-versioning">Role Versioning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#globalize-callbacks">Globalize Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#runtime-check-on-modules-for-blacklisting">Runtime Check on Modules for Blacklisting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#windows">Windows</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap/ROADMAP_2_5.html#general-cloud">General Cloud</a></li>
@@ -1812,7 +1925,7 @@
   <li><a href="">Ansible for Network Automation</a></li>
   
     <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/network/index.rst" class="icon icon-github"> Edit on GitHub</a>
+      <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/network/index.rst?description=%3C!---%20Your%20description%20here%20--%3E%0A%0A+label:%20docsite_pr" class="icon icon-github"> Edit on GitHub</a>
     </li>
   
 </ul>
@@ -1826,7 +1939,7 @@
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>Ansible Network modules extend the benefits of simple, powerful, agentless automation to network administrators and teams. Ansible Network modules can configure your network stack, test and validate existing network state, and discover and correct network configuration drift.</p>
 <p>If you’re new to Ansible, or new to using Ansible for network management, start with the Getting Started Guide.</p>
-<p>For documentation on using a particular network module, consult the <span class="xref std std-doc">list of all network modules</span>. Some network modules are maintained by the Ansible community - here’s a list of <a class="reference internal" href="../modules/network_maintained.html"><span class="doc">network modules maintained by the Ansible Network Team</span></a>.</p>
+<p>For documentation on using a particular network module, consult the <a class="reference internal" href="../modules/list_of_network_modules.html"><span class="doc">list of all network modules</span></a>. Some network modules are maintained by the Ansible community - here’s a list of <a class="reference internal" href="../modules/network_maintained.html"><span class="doc">network modules maintained by the Ansible Network Team</span></a>.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Getting Started</span></p>
 <ul>
@@ -1966,16 +2079,16 @@
 <li class="toctree-l3"><a class="reference internal" href="user_guide/platform_ios.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="user_guide/platform_junos.html">JUNOS Platform Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="user_guide/platform_junos.html">Junos OS Platform Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/platform_junos.html#connections-available">Connections Available</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/platform_junos.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/platform_junos.html#using-netconf-in-ansible-2-5">Using Netconf in Ansible 2.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/platform_junos.html#using-netconf-in-ansible-2-5">Using NETCONF in Ansible 2.5</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="user_guide/platform_nxos.html">NXOS Platform Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/platform_nxos.html#connections-available">Connections Available</a></li>
 <li class="toctree-l3"><a class="reference internal" href="user_guide/platform_nxos.html#using-cli-in-ansible-2-5">Using CLI in Ansible 2.5</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user_guide/platform_nxos.html#using-nxapi-in-ansible-2-5">Using nxAPI in Ansible 2.5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user_guide/platform_nxos.html#using-nx-api-in-ansible-2-5">Using NX-API in Ansible 2.5</a></li>
 </ul>
 </li>
 </ul>
@@ -1995,7 +2108,7 @@
         <a href="getting_started/index.html" class="btn btn-neutral float-right" title="An Introduction to Network Automation with Ansible"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../scenario_guides/guide_rolling_upgrade.html" class="btn btn-neutral" title="Continuous Delivery and Rolling Upgrades"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../scenario_guides/guide_vmware.html" class="btn btn-neutral" title="Getting Started with VMware"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -2011,14 +2124,9 @@
   _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
 </script>
 
-  <p>
-  Copyright © 2018 Red Hat, Inc.
-  <br>
-    Last updated on Feb 27, 2018.
+  <p>Last updated on Mar 26, 2018.<br/>
+  Copyright © 2018 Red Hat, Inc. <br/>
   </p>
-<p>
-Ansible docs are generated from <a href="https://github.com/ansible/ansible">GitHub sources</a> using <a href="http://sphinx-doc.org/">Sphinx</a> using a theme provided by <a href="http://readthedocs.org">Read the Docs</a>.
-</p>
 </footer>
         </div>
       </div>

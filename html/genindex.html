@@ -38,7 +38,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:'./',
-        VERSION:'2.4',
+        VERSION:'2.6',
         COLLAPSE_INDEX:false,
         FILE_SUFFIX:'.html',
         HAS_SOURCE:  false
@@ -83,7 +83,8 @@
         </ul>
     </div>
 
-  <a class="DocSite-nav" href="/">
+  <a class="DocSite-nav" href="/" style="padding-bottom: 30px;">
+      
     <img class="DocSiteNav-logo"
       src="_static/images/logo_invert.png"
       alt="Ansible Logo">
@@ -97,6 +98,7 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
           
@@ -280,6 +282,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="porting_guides/porting_guide_2.5.html#porting-custom-scripts">Porting custom scripts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="porting_guides/porting_guide_2.5.html#network">Network</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="porting_guides/porting_guide_2.5.html#expanding-documentation">Expanding documentation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="porting_guides/porting_guide_2.5.html#top-level-connection-arguments-will-be-removed-in-2-9">Top-level connection arguments will be removed in 2.9</a></li>
 <li class="toctree-l4"><a class="reference internal" href="porting_guides/porting_guide_2.5.html#adding-persistent-connection-types-network-cli-and-netconf">Adding persistent connection types <code class="docutils literal"><span class="pre">network_cli</span></code> and <code class="docutils literal"><span class="pre">netconf</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="porting_guides/porting_guide_2.5.html#developers-shared-module-utilities-moved">Developers: Shared Module Utilities Moved</a></li>
@@ -630,7 +633,27 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="modules/modules_by_category.html">Module Index</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="modules/list_of_all_modules.html">All modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_cloud_modules.html">Cloud modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_clustering_modules.html">Clustering modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_commands_modules.html">Commands modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_crypto_modules.html">Crypto modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_database_modules.html">Database modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_files_modules.html">Files modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_identity_modules.html">Identity modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_inventory_modules.html">Inventory modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_messaging_modules.html">Messaging modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_monitoring_modules.html">Monitoring modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_net_tools_modules.html">Net Tools modules</a></li>
 <li class="toctree-l4"><a class="reference internal" href="modules/list_of_network_modules.html">Network modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_notification_modules.html">Notification modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_packaging_modules.html">Packaging modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_remote_management_modules.html">Remote Management modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_source_control_modules.html">Source Control modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_storage_modules.html">Storage modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_system_modules.html">System modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_utilities_modules.html">Utilities modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_web_infrastructure_modules.html">Web Infrastructure modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/list_of_windows_modules.html">Windows modules</a></li>
 </ul>
 </li>
 </ul>
@@ -759,6 +782,11 @@
 <p class="caption"><span class="caption-text">Contributing to Ansible</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="community/index.html">Ansible Community Guide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="community/code_of_conduct.html">Community Code of Conduct</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="community/code_of_conduct.html#anti-harassment-policy">Anti-harassment policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="community/code_of_conduct.html#policy-violations">Policy violations</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="community/development_process.html">The Ansible Development Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="community/development_process.html#road-maps">Road Maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="community/development_process.html#pull-requests">Pull Requests</a><ul>
@@ -817,6 +845,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="community/release_managers.html#release-process">Release Process</a></li>
 <li class="toctree-l2"><a class="reference internal" href="community/communication.html">Communicating</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="community/communication.html#code-of-conduct">Code of Conduct</a></li>
 <li class="toctree-l3"><a class="reference internal" href="community/communication.html#mailing-list-information">Mailing List Information</a></li>
 <li class="toctree-l3"><a class="reference internal" href="community/communication.html#irc-channel">IRC Channel</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="community/communication.html#general-channels">General Channels</a></li>
@@ -1042,48 +1071,49 @@
 <li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#highly-available">7.30. Highly available</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#hostname">7.31. Hostname</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#i-e">7.32. i.e.</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#it-s-and-its">7.33. It’s and its</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#less">7.34. Less</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#linux">7.35. Linux</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#login">7.36. Login</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#log-in">7.37. Log in</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#log-on">7.38. Log on</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#lots-of">7.39. Lots of</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#make-sure">7.40. Make sure</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#manual-man-page">7.41. Manual/man page</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#mb">7.42. MB</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#mbps">7.43. MBps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#mysql">7.44. MySQL</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#need-to">7.45. Need to</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#read-only">7.46. Read-only</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#real-time-real-time">7.47. Real time/real-time</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#refer-to">7.48. Refer to</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#see">7.49. See</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#since">7.50. Since</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#tells">7.51. Tells</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#that-which">7.52. That/which</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#then-than">7.53. Then/than</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#third-party">7.54. Third-party</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#troubleshoot">7.55. Troubleshoot</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#uk">7.56. UK</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#unix">7.57. UNIX®</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#unset">7.58. Unset</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#us">7.59. US</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#user">7.60. User</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#username">7.61. Username</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#view">7.62. View</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#within">7.63. Within</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#world-wide-web">7.64. World Wide Web</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#webpage">7.65. Webpage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#web-server">7.66. Web server</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#website">7.67. Website</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#who-whom">7.68. Who/whom</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#will">7.69. Will</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#wish">7.70. Wish</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#x86">7.71. x86</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#x86-64">7.72. x86_64</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#you">7.73. You</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#you-may">7.74. You may</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#installer">7.33. Installer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#it-s-and-its">7.34. It’s and its</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#less">7.35. Less</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#linux">7.36. Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#login">7.37. Login</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#log-in">7.38. Log in</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#log-on">7.39. Log on</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#lots-of">7.40. Lots of</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#make-sure">7.41. Make sure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#manual-man-page">7.42. Manual/man page</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#mb">7.43. MB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#mbps">7.44. MBps</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#mysql">7.45. MySQL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#need-to">7.46. Need to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#read-only">7.47. Read-only</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#real-time-real-time">7.48. Real time/real-time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#refer-to">7.49. Refer to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#see">7.50. See</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#since">7.51. Since</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#tells">7.52. Tells</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#that-which">7.53. That/which</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#then-than">7.54. Then/than</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#third-party">7.55. Third-party</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#troubleshoot">7.56. Troubleshoot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#uk">7.57. UK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#unix">7.58. UNIX®</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#unset">7.59. Unset</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#us">7.60. US</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#user">7.61. User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#username">7.62. Username</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#view">7.63. View</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#within">7.64. Within</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#world-wide-web">7.65. World Wide Web</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#webpage">7.66. Webpage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#web-server">7.67. Web server</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#website">7.68. Website</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#who-whom">7.69. Who/whom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#will">7.70. Will</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#wish">7.71. Wish</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#x86">7.72. x86</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#x86-64">7.73. x86_64</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#you">7.74. You</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev_guide/style_guide/spelling_word_choice.html#you-may">7.75. You may</a></li>
 </ul>
 </li>
 </ul>
@@ -1326,7 +1356,7 @@
 <li class="toctree-l4"><a class="reference internal" href="network/getting_started/first_inventory.html#add-variables-to-inventory">Add Variables to Inventory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network/getting_started/first_inventory.html#group-variables-within-inventory">Group Variables within Inventory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network/getting_started/first_inventory.html#variable-syntax">Variable Syntax</a></li>
-<li class="toctree-l4"><a class="reference internal" href="network/getting_started/first_inventory.html#move-group-variables-to-group-vars-files">Move Group Variables to <code class="docutils literal"><span class="pre">group_vars</span></code> Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network/getting_started/first_inventory.html#group-inventory-by-platform">Group Inventory by Platform</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network/getting_started/first_inventory.html#protecting-sensitive-variables-with-ansible-vault">Protecting Sensitive Variables with <code class="docutils literal"><span class="pre">ansible-vault</span></code></a></li>
 </ul>
 </li>
@@ -1339,6 +1369,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="network/user_guide/index.html">User Guide to to Network Automation with Ansible</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="network/user_guide/index.html#who-should-use-this-guide">Who should use this guide?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="network/user_guide/faq.html">Ansible Network FAQ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="network/user_guide/faq.html#how-can-i-improve-performance-for-network-playbooks">How can I improve performance for network playbooks?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network/user_guide/faq.html#why-is-my-output-sometimes-replaced-with">Why is my output sometimes replaced with <code class="docutils literal"><span class="pre">********</span></code>?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="network/user_guide/faq.html#why-do-the-config-modules-always-return-changed-true-with-abbreviated-commands">Why do the <code class="docutils literal"><span class="pre">*_config</span></code> modules always return <code class="docutils literal"><span class="pre">changed=true</span></code> with abbreviated commands?</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="network/user_guide/network_best_practices_2.5.html">Network Best Practices for Ansible 2.5</a><ul>
@@ -1378,51 +1414,168 @@
 <p class="caption"><span class="caption-text">Reference &amp; Appendices</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules/modules_by_category.html">Module Index</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modules/list_of_all_modules.html">All modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules/eos_command_module.html">eos_command  --  Run arbitrary commands on an Arista EOS device</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html#parameters">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html#notes">Notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html#examples">Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_all_modules.html">All modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_cloud_modules.html">Cloud modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#amazon">Amazon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#atomic">Atomic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#azure">Azure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#centurylink">Centurylink</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#cloudscale">Cloudscale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#cloudstack">Cloudstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#digital-ocean">Digital_Ocean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#dimensiondata">Dimensiondata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#docker">Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#google">Google</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#linode">Linode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#lxc">Lxc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#lxd">Lxd</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#misc">Misc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#oneandone">Oneandone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#opennebula">Opennebula</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#openstack">Openstack</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#ovh">Ovh</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#ovirt">Ovirt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#packet">Packet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#profitbricks">Profitbricks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#pubnub">Pubnub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#rackspace">Rackspace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#scaleway">Scaleway</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#smartos">Smartos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#softlayer">Softlayer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#spotinst">Spotinst</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#univention">Univention</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#vmware">Vmware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#vultr">Vultr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_cloud_modules.html#webfaction">Webfaction</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="modules/ios_command_module.html">ios_command  --  Run commands on remote devices running Cisco IOS</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html#parameters">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html#notes">Notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html#examples">Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_clustering_modules.html">Clustering modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_clustering_modules.html#k8s">K8S</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_clustering_modules.html#openshift">Openshift</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="modules/vyos_config_module.html">vyos_config  --  Manage VyOS configuration on remote device</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html#synopsis">Synopsis</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html#parameters">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html#notes">Notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html#examples">Examples</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html#status">Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_commands_modules.html">Commands modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_crypto_modules.html">Crypto modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_database_modules.html">Database modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#influxdb">Influxdb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#misc">Misc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#mongodb">Mongodb</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#mssql">Mssql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#mysql">Mysql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#postgresql">Postgresql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#proxysql">Proxysql</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_database_modules.html#vertica">Vertica</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_files_modules.html">Files modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_identity_modules.html">Identity modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_identity_modules.html#cyberark">Cyberark</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_identity_modules.html#ipa">Ipa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_identity_modules.html#keycloak">Keycloak</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_identity_modules.html#opendj">Opendj</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_inventory_modules.html">Inventory modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_messaging_modules.html">Messaging modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_monitoring_modules.html">Monitoring modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_monitoring_modules.html#zabbix">Zabbix</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_net_tools_modules.html">Net Tools modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_net_tools_modules.html#basics">Basics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_net_tools_modules.html#exoscale">Exoscale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_net_tools_modules.html#infinity">Infinity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_net_tools_modules.html#ldap">Ldap</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_net_tools_modules.html#nios">Nios</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="modules/list_of_network_modules.html">Network modules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#eos">Eos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/eos_command_module.html">eos_command  --  Run arbitrary commands on an Arista EOS device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#a10">A10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#aci">Aci</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#aireos">Aireos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#aos">Aos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#aruba">Aruba</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#asa">Asa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#avi">Avi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#bigswitch">Bigswitch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#citrix">Citrix</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#cloudengine">Cloudengine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#cloudvision">Cloudvision</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#cnos">Cnos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#cumulus">Cumulus</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#dellos10">Dellos10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#dellos6">Dellos6</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#dellos9">Dellos9</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#edgeos">Edgeos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#enos">Enos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#eos">Eos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#f5">F5</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#fortimanager">Fortimanager</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#fortios">Fortios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#illumos">Illumos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#interface">Interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#ios">Ios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#iosxr">Iosxr</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#ironware">Ironware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#junos">Junos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#layer2">Layer2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#layer3">Layer3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#netact">Netact</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#netconf">Netconf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#netscaler">Netscaler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#netvisor">Netvisor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#nso">Nso</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#nuage">Nuage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#nxos">Nxos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#onyx">Onyx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#ordnance">Ordnance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#ovs">Ovs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#panos">Panos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#protocol">Protocol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#radware">Radware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#slxos">Slxos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#sros">Sros</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#system">System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#vyos">Vyos</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#ios">Ios</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/ios_command_module.html">ios_command  --  Run commands on remote devices running Cisco IOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_notification_modules.html">Notification modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_packaging_modules.html">Packaging modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_packaging_modules.html#language">Language</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_packaging_modules.html#os">Os</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="modules/list_of_network_modules.html#vyos">Vyos</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/vyos_config_module.html">vyos_config  --  Manage VyOS configuration on remote device</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_remote_management_modules.html">Remote Management modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#foreman">Foreman</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#hpilo">Hpilo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#imc">Imc</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#ipmi">Ipmi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#manageiq">Manageiq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#oneview">Oneview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#stacki">Stacki</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_remote_management_modules.html#ucs">Ucs</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_source_control_modules.html">Source Control modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_storage_modules.html">Storage modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_storage_modules.html#infinidat">Infinidat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_storage_modules.html#netapp">Netapp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_storage_modules.html#purestorage">Purestorage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_storage_modules.html#zfs">Zfs</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_system_modules.html">System modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_utilities_modules.html">Utilities modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_utilities_modules.html#helper">Helper</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_utilities_modules.html#logic">Logic</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_web_infrastructure_modules.html">Web Infrastructure modules</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/list_of_web_infrastructure_modules.html#ansible-tower">Ansible_Tower</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/list_of_windows_modules.html">Windows modules</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference_appendices/playbooks_keywords.html">Playbook Keywords</a><ul>
@@ -1878,20 +2031,6 @@
       </div>
 
 
-
-
-
-<div class="DocSite-sideNav ansibleNav">
-    <ul class="">
-    <li><a href="https://www.ansible.com/ansiblefest" target="_blank">AnsibleFest</a></li>
-    <li><a href="https://www.ansible.com/tower" target="_blank">Products</a></li>
-    <li><a href="https://www.ansible.com/community" target="_blank">Community</a></li>
-    <li><a href="https://www.ansible.com/webinars-training" target="_blank">Webinars & Training</a></li>
-    <li><a href="https://www.ansible.com/blog" target="_blank">Blog</a></li>
-    </ul>
-</div>
-
-
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
@@ -1924,7 +2063,7 @@
   <li><a href="">Index</a></li>
   
     <li class="wy-breadcrumbs-aside">
-      <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/genindex.rst?description=%3C!---%20Your%20description%20here%20--%3E%0A%0A+label:%20docsite_pr" class="icon icon-github"> Edit on GitHub</a>
+      <a href="https://github.com/ansible/ansible/edit/devel/docs/docsite/rst/genindex.rst?description=%3C!---%20Your%20description%20here%20--%3E%0A%0A%2Blabel:%20docsite_pr" class="icon icon-github"> Edit on GitHub</a>
     </li>
   
 </ul>
@@ -2070,6 +2209,8 @@
       <ul>
         <li><a href="cli/ansible-vault.html#cmdoption-ansible-vault-create-encrypt-vault-id">ansible-vault-create command line option</a>
 </li>
+        <li><a href="cli/ansible-vault.html#cmdoption-ansible-vault-edit-encrypt-vault-id">ansible-vault-edit command line option</a>
+</li>
         <li><a href="cli/ansible-vault.html#cmdoption-ansible-vault-encrypt-encrypt-vault-id">ansible-vault-encrypt command line option</a>
 </li>
         <li><a href="cli/ansible-vault.html#cmdoption-ansible-vault-encrypt-string-encrypt-vault-id">ansible-vault-encrypt_string command line option</a>
@@ -2158,8 +2299,6 @@
         <li><a href="cli/ansible.html#cmdoption-ansible-list-hosts">ansible command line option</a>
 </li>
         <li><a href="cli/ansible-console.html#cmdoption-ansible-console-list-hosts">ansible-console command line option</a>
-</li>
-        <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-list-hosts">ansible-inventory command line option</a>
 </li>
         <li><a href="cli/ansible-playbook.html#cmdoption-ansible-playbook-list-hosts">ansible-playbook command line option</a>
 </li>
@@ -2709,8 +2848,6 @@
 </li>
         <li><a href="cli/ansible-console.html#cmdoption-ansible-console-l">ansible-console command line option</a>
 </li>
-        <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-l">ansible-inventory command line option</a>
-</li>
         <li><a href="cli/ansible-playbook.html#cmdoption-ansible-playbook-l">ansible-playbook command line option</a>
 </li>
         <li><a href="cli/ansible-pull.html#cmdoption-ansible-pull-l">ansible-pull command line option</a>
@@ -2976,7 +3113,7 @@
 </li>
       <li><a href="reference_appendices/playbooks_keywords.html#term-always"><strong>always</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-37"><strong>always_run</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-60"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-85"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-always-run"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-38"><strong>always_run</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-62"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-88"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-always-run"><strong>[3]</strong></a>
 </li>
       <li>
     ansible command line option
@@ -3313,8 +3450,6 @@
 </li>
         <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-list">--list</a>
 </li>
-        <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-list-hosts">--list-hosts</a>
-</li>
         <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-playbook-dir">--playbook-dir &lt;BASEDIR&gt;</a>
 </li>
         <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-vars">--vars</a>
@@ -3328,8 +3463,6 @@
         <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-h">-h, --help</a>
 </li>
         <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-i">-i, --inventory, --inventory-file</a>
-</li>
-        <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-l">-l &lt;SUBSET&gt;, --limit &lt;SUBSET&gt;</a>
 </li>
         <li><a href="cli/ansible-inventory.html#cmdoption-ansible-inventory-v">-v, --verbose</a>
 </li>
@@ -3543,6 +3676,13 @@
 
       <ul>
         <li><a href="cli/ansible-vault.html#cmdoption-ansible-vault-decrypt-output">--output</a>
+</li>
+      </ul></li>
+      <li>
+    ansible-vault-edit command line option
+
+      <ul>
+        <li><a href="cli/ansible-vault.html#cmdoption-ansible-vault-edit-encrypt-vault-id">--encrypt-vault-id  &lt;ENCRYPT_VAULT_ID&gt;</a>
 </li>
       </ul></li>
       <li>
@@ -3888,7 +4028,7 @@
 </li>
       <li><a href="installation_guide/_config.html#index-156">ANSIBLE_YAML_FILENAME_EXT</a>, <a href="reference_appendices/config.html#index-156">[1]</a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-38"><strong>any_errors_fatal</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-61"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-86"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-any-errors-fatal"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-39"><strong>any_errors_fatal</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-63"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-89"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-any-errors-fatal"><strong>[3]</strong></a>
 </li>
       <li><a href="dev_guide/developing_modules_checklist.html#index-0">API_&lt;MODULENAME&gt;_USERNAME</a>
 </li>
@@ -3906,15 +4046,15 @@
 <h2 id="B">B</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-39"><strong>become</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-62"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-89"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-40"><strong>become</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-64"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-92"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become"><strong>[3]</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-40"><strong>become_flags</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-63"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-90"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become-flags"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-41"><strong>become_flags</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-65"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-93"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become-flags"><strong>[3]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-41"><strong>become_method</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-64"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-91"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become-method"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-42"><strong>become_method</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-66"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-94"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become-method"><strong>[3]</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-42"><strong>become_user</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-65"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-92"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become-user"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-43"><strong>become_user</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-67"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-95"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-become-user"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/playbooks_keywords.html#term-block"><strong>block</strong></a>
 </li>
@@ -3932,11 +4072,11 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-43"><strong>check_mode</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-67"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-94"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-check-mode"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-44"><strong>check_mode</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-69"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-97"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-check-mode"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-conditionals"><strong>Conditionals</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-44"><strong>connection</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-68"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-95"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-connection"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-45"><strong>connection</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-70"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-98"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-connection"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-connection-plugin"><strong>Connection Plugin</strong></a>
 </li>
@@ -3946,19 +4086,19 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-45"><strong>debugger</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-69"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-96"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-debugger"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-46"><strong>debugger</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-71"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-99"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-debugger"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-declarative"><strong>Declarative</strong></a>
 </li>
       <li><a href="reference_appendices/playbooks_keywords.html#term-delay"><strong>delay</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-70"><strong>delegate_facts</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-98"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-delegate-facts"><strong>[2]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-101"><strong>delegate_facts</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-72"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-delegate-facts"><strong>[2]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-71"><strong>delegate_to</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-99"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-delegate-to"><strong>[2]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-102"><strong>delegate_to</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-73"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-delegate-to"><strong>[2]</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-100"><strong>diff</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-48"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-72"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-diff"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-103"><strong>diff</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-49"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-74"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-diff"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-diff-mode"><strong>Diff Mode</strong></a>
 </li>
@@ -3970,7 +4110,7 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-101"><strong>environment</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-49"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-73"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-environment"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-104"><strong>environment</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-50"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-75"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-environment"><strong>[3]</strong></a>
 </li>
       <li>
     environment variable
@@ -4373,7 +4513,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference_appendices/glossary.html#term-idempotency"><strong>Idempotency</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-103"><strong>ignore_errors</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-50"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-74"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-ignore-errors"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-106"><strong>ignore_errors</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-51"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-76"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-ignore-errors"><strong>[3]</strong></a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -4435,6 +4575,8 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference_appendices/playbooks_keywords.html#term-max-fail-percentage"><strong>max_fail_percentage</strong></a>
 </li>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-111"><strong>module_defaults</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-52"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-77"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-module-defaults"><strong>[3]</strong></a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference_appendices/glossary.html#term-modules"><strong>Modules</strong></a>
@@ -4447,13 +4589,13 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-108"><strong>name</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-51"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-75"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-name"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-112"><strong>name</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-53"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-78"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-name"><strong>[3]</strong></a>
 </li>
       <li><a href="installation_guide/_config.html#index-139">NETWORK_GROUP_MODULES</a>, <a href="reference_appendices/config.html#index-139">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-109"><strong>no_log</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-52"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-76"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-no-log"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-113"><strong>no_log</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-54"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-79"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-no-log"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-notify"><strong>Notify</strong></a>
 </li>
@@ -4487,7 +4629,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-112"><strong>port</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-53"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-77"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-port"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-116"><strong>port</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-55"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-80"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-port"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/playbooks_keywords.html#term-post-tasks"><strong>post_tasks</strong></a>
 </li>
@@ -4507,7 +4649,7 @@
 </li>
       <li><a href="reference_appendices/glossary.html#term-register-variable"><strong>Register Variable</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-114"><strong>remote_user</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-54"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-78"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-remote-user"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-118"><strong>remote_user</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-56"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-81"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-remote-user"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/playbooks_keywords.html#term-rescue"><strong>rescue</strong></a>
 </li>
@@ -4523,7 +4665,7 @@
 </li>
       <li><a href="reference_appendices/glossary.html#term-rolling-update"><strong>Rolling Update</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-116"><strong>run_once</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-55"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-80"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-run-once"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-120"><strong>run_once</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-57"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-83"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-run-once"><strong>[3]</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -4551,7 +4693,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference_appendices/glossary.html#term-tags"><strong>Tags</strong></a>
 </li>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-117"><strong>tags</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-56"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-81"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-tags"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-121"><strong>tags</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-58"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-84"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-tags"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-task"><strong>Task</strong></a>
 </li>
@@ -4579,7 +4721,7 @@
 <h2 id="V">V</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-119"><strong>vars</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-57"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-82"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-vars"><strong>[3]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-123"><strong>vars</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-59"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-85"><strong>[2]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-vars"><strong>[3]</strong></a>
 </li>
       <li><a href="reference_appendices/glossary.html#term-vars-variables"><strong>Vars (Variables)</strong></a>
 </li>
@@ -4601,7 +4743,7 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference_appendices/playbooks_keywords.html#term-120"><strong>when</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-83"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-when"><strong>[2]</strong></a>
+      <li><a href="reference_appendices/playbooks_keywords.html#term-124"><strong>when</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-86"><strong>[1]</strong></a>, <a href="reference_appendices/playbooks_keywords.html#term-when"><strong>[2]</strong></a>
 </li>
       <li><a href="reference_appendices/playbooks_keywords.html#term-with-lookup-plugin"><strong>with_&lt;lookup_plugin&gt;</strong></a>
 </li>
@@ -4634,7 +4776,7 @@
   _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
 </script>
 
-  <p>Last updated on Mar 26, 2018.<br/>
+  <p>Last updated on Apr 12, 2018.<br/>
   Copyright © 2018 Red Hat, Inc. <br/>
   </p>
 </footer>
@@ -4652,7 +4794,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.4',
+            VERSION:'2.6',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

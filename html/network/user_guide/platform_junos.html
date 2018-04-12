@@ -1372,6 +1372,12 @@
 <li class="toctree-l4"><a class="reference internal" href="index.html#who-should-use-this-guide">Who should use this guide?</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html">Ansible Network FAQ</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="faq.html#how-can-i-improve-performance-for-network-playbooks">How can I improve performance for network playbooks?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="faq.html#why-is-my-output-sometimes-replaced-with">Why is my output sometimes replaced with <code class="docutils literal"><span class="pre">********</span></code>?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="faq.html#why-do-the-config-modules-always-return-changed-true-with-abbreviated-commands">Why do the <code class="docutils literal"><span class="pre">*_config</span></code> modules always return <code class="docutils literal"><span class="pre">changed=true</span></code> with abbreviated commands?</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="network_best_practices_2.5.html">Network Best Practices for Ansible 2.5</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="network_best_practices_2.5.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="network_best_practices_2.5.html#concepts">Concepts</a></li>
@@ -1529,6 +1535,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#protocol">Protocol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#radware">Radware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#routing">Routing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#slxos">Slxos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#sros">Sros</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#system">System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../modules/list_of_network_modules.html#vyos">Vyos</a></li>
@@ -2221,7 +2228,7 @@
 </ul>
 <p>To enable NETCONF on a new switch via Ansible, use the <code class="docutils literal"><span class="pre">junos_netconf</span></code> module via the CLI connection. Set up your platform-level variables just like in the CLI example above, then run a playbook task like this:</p>
 <div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">Enable NETCONF</span>
-  <span class="l l-Scalar l-Scalar-Plain">ansible_connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">network_cli</span>
+  <span class="l l-Scalar l-Scalar-Plain">connection</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">network_cli</span>
   <span class="l l-Scalar l-Scalar-Plain">junos_netconf</span><span class="p p-Indicator">:</span>
   <span class="l l-Scalar l-Scalar-Plain">when</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ansible_network_os == &#39;junos&#39;</span>
 </pre></div>
@@ -2282,7 +2289,7 @@
   _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
 </script>
 
-  <p>Last updated on Apr 11, 2018.<br/>
+  <p>Last updated on Apr 12, 2018.<br/>
   Copyright © 2018 Red Hat, Inc. <br/>
   </p>
 </footer>

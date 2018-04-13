@@ -2038,7 +2038,6 @@
                                                             <td>
                 <div class="cell-border">
                                                                                 <div>This argument takes a list of <code>set</code> or <code>delete</code> configuration lines to push into the remote device.  Each line must start with either <code>set</code> or <code>delete</code>.  This argument is mutually exclusive with the <em>src</em> argument.</div>
-                                                        <div>Abbreviated commands in lines are NOT idempotent, see <a href='../network/user_guide/faq.html'>Network FAQ</a>.</div>
                                                                                             </div>
             </td>
         </tr>
@@ -2313,6 +2312,7 @@
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
 <li>This module requires the netconf system service be enabled on the remote device being managed.</li>
+<li>Abbreviated commands are NOT idempotent, see <a class="reference external" href="../network/user_guide/faq.html#why-do-the-config-modules-always-return-changed-true-with-abbreviated-commands">Network FAQ</a>.</li>
 <li>Loading JSON-formatted configuration <em>json</em> is supported starting in Junos OS Release 16.1 onwards.</li>
 <li>Tested against vSRX JUNOS version 15.1X49-D15.4, vqfx-10000 JUNOS Version 15.1X53-D60.4.</li>
 <li>For information on using CLI and netconf see the <a class="reference internal" href="../network/user_guide/platform_junos.html#junos-platform-options"><span class="std std-ref">Junos OS Platform Options guide</span></a></li>
@@ -2350,10 +2350,8 @@
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">for idempotency, use full-form commands</span>
   <span class="l l-Scalar l-Scalar-Plain">junos_config</span><span class="p p-Indicator">:</span>
     <span class="l l-Scalar l-Scalar-Plain">lines</span><span class="p p-Indicator">:</span>
-      <span class="c1"># - shut</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shutdown</span>
-    <span class="c1"># parents: int eth1/1</span>
-    <span class="l l-Scalar l-Scalar-Plain">parents</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">interface Ethernet1/1</span>
+      <span class="c1"># - set int ge-0/0/1 unit 0 desc &quot;Test interface&quot;</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">set interfaces ge-0/0/1 unit 0 description &quot;Test interface&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -2425,7 +2423,7 @@ please refer to this <a class="reference external" href="https://access.redhat.c
   _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
 </script>
 
-  <p>Last updated on Apr 12, 2018.<br/>
+  <p>Last updated on Apr 13, 2018.<br/>
   Copyright © 2018 Red Hat, Inc. <br/>
   </p>
 </footer>

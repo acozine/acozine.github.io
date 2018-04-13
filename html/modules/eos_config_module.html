@@ -2163,7 +2163,6 @@
                                                             <td>
                 <div class="cell-border">
                                                                                 <div>The ordered set of commands that should be configured in the section.  The commands must be the exact same commands as found in the device running-config.  Be sure to note the configuration command syntax as some commands are automatically modified by the device config parser.</div>
-                                                        <div>Abbreviated commands in lines are NOT idempotent, see <a href='../network/user_guide/faq.html'>Network FAQ</a>.</div>
                                                                                                     <div style="font-size: small; color: darkgreen"><br/>aliases: commands</div>
                                         </div>
             </td>
@@ -2599,6 +2598,7 @@
 <p class="first admonition-title">Note</p>
 <ul class="last simple">
 <li>Tested against EOS 4.15</li>
+<li>Abbreviated commands are NOT idempotent, see <a class="reference external" href="../network/user_guide/faq.html#why-do-the-config-modules-always-return-changed-true-with-abbreviated-commands">Network FAQ</a>.</li>
 <li>For information on using CLI, eAPI and privileged mode see the <a class="reference internal" href="../network/user_guide/platform_eos.html#eos-platform-options"><span class="std std-ref">EOS Platform Options guide</span></a></li>
 <li>For more information on using Ansible to manage network devices see the <a class="reference internal" href="../network/index.html#network-guide"><span class="std std-ref">Ansible Network Guide</span></a></li>
 <li>For more information on using Ansible to manage Arista EOS devices see the <a class="reference external" href="https://www.ansible.com/ansible-arista-networks">Arista integration page</a>.</li>
@@ -2641,8 +2641,8 @@
     <span class="l l-Scalar l-Scalar-Plain">lines</span><span class="p p-Indicator">:</span>
       <span class="c1"># - shut</span>
       <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">shutdown</span>
-    <span class="c1"># parents: int eth1/1</span>
-    <span class="l l-Scalar l-Scalar-Plain">parents</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">interface Ethernet1/1</span>
+    <span class="c1"># parents: int eth1</span>
+    <span class="l l-Scalar l-Scalar-Plain">parents</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">interface Ethernet1</span>
 </pre></div>
 </div>
 </div>
@@ -2752,7 +2752,7 @@ please refer to this <a class="reference external" href="https://access.redhat.c
   _st('install','yABGvz2N8PwcwBxyfzUc','2.0.0');
 </script>
 
-  <p>Last updated on Apr 12, 2018.<br/>
+  <p>Last updated on Apr 13, 2018.<br/>
   Copyright © 2018 Red Hat, Inc. <br/>
   </p>
 </footer>
